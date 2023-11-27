@@ -21,7 +21,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     if (response.status == 200) {
 
         localStorage.setItem("token", data.token)
-        window.location.assign("diary.html")
+        window.location.assign("news.html")
     } else {
         alert(data.error);
     }
