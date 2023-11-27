@@ -34,7 +34,7 @@ document.getElementById("newTaskPopup").addEventListener("submit", async (e) => 
 
 function createUsersElement(data) {
     const user = document.createElement("div");
-    user.className = "userDiv";
+    user.className = "userDiv change";
 
     const userID = document.createElement("p");
     userID.textContent = "ID: " + data["id"];
@@ -75,7 +75,6 @@ function createUsersElement(data) {
                 alert(respData.error);
             }
         }
-
     });
 
     user.appendChild(userID)
@@ -115,7 +114,7 @@ async function loadUsers() {
 
 function createTasksElement(data) {
     const task = document.createElement("div");
-    task.className = "taskDiv";
+    task.className = "taskDiv change";
 
     const taskID = document.createElement("p");
     taskID.textContent = "ID: " + data["id"];
@@ -135,11 +134,39 @@ function createTasksElement(data) {
     const formattedDate = `${originalDates.getDate().toString().padStart(2, '0')}-${(originalDates.getMonth() + 1).toString().padStart(2, '0')}-${originalDates.getFullYear()}`;
     startDate.textContent = "Start Date: " + formattedDate;
 
+    const removeBtn = document.createElement("button")
+    removeBtn.className = "removeBtn";
+    removeBtn.textContent = "remove task"
+
+    removeBtn.addEventListener('click', async () => {
+        const options = {
+            headers: {
+                Authorization: localStorage.getItem('token')
+            },
+            method: 'DELETE'
+        };
+        const userResponse = window.confirm("Are you sure that you want to delete this entry?");
+        if (userResponse) {
+            const response = await fetch(
+                `http://localhost:3000/tasks/${data['id']}`,
+                options
+            );
+
+            if (response.status === 204) {
+                window.location.reload();
+            } else {
+                const respData = await response.json();
+                alert(respData.error);
+            }
+        }
+    });
+
     task.appendChild(taskID)
     task.appendChild(name)
     task.appendChild(status)
     task.appendChild(noNeeded)
     task.appendChild(startDate)
+    task.appendChild(removeBtn)
     return task
 }
 
