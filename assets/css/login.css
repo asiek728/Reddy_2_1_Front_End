@@ -1,0 +1,26 @@
+body {
+    background-color: lightblue;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.detail {
+    background-color: #11A5D3;
+    width: 100vh;
+    height: 5vh;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+
+#log-in, #register {
+    background-color: #11A5D3;
+    width: 10vh;
+    height: 5vh;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+
+
