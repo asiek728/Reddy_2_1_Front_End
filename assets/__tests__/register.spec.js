@@ -18,7 +18,7 @@ describe('register.html', () => {
     expect(emailAddress.innerHTML).toContain('')
   })
 
-   it('user is redirected when home button is clicked', () => {
+  it('user is redirected when home button is clicked', () => {
     const btn = document.querySelector('#homeBtn')
     btn.click()
     expect(window.location.href).toEqual('/index.html')
