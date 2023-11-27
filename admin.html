@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles.css">
-    <!-- <link rel="stylesheet" href="./assets/admin.css"> -->
+    <link rel="stylesheet" href="./assets/css/admin.css"> 
     <script src="./assets/js/admin.js" defer></script>
     <title>Admin page</title>
 </head>
@@ -27,6 +27,36 @@
     <div class="buttons">
         <button id="usersBtn">Check users</button>
         <button id="tasksBtn">Check tasks</button>
+        <button class="tasksBtn" id="tasksBtn" onclick="openForm()">Add a new task</button>
+
+    </div>
+
+    <div class="newTaskPopup" id="newTaskPopup">
+        <form class="popupContainer">
+            <h2>New Task Form</h2>
+            <fieldset id="nameField">
+                <label for="taskName">Task name:</label>
+                <input type="text" id="taskName" name="taskName" required>
+            </fieldset>
+
+            <fieldset id="statusField">
+                <label for="status">Status:</label>
+                <input type="text" id="status" name="status" required>
+            </fieldset>
+
+            <fieldset id="volunteersField">
+                <label for="volunteersNum">Number of volunteers needed:</label>
+                <input type="text" id="volunteersNum" name="volunteersNum" required>
+            </fieldset>
+
+            <fieldset id="startDateField">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </fieldset>
+
+            <input type="submit"  class="btn postBtn" value="Post" id="post">
+            <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+        </form>
     </div>
 
     <div class="users" id="users"></div>
