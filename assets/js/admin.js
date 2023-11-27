@@ -34,7 +34,7 @@ document.getElementById("newTaskPopup").addEventListener("submit", async (e) => 
 
 function createUsersElement(data) {
     const user = document.createElement("div");
-    user.className = "userDiv";
+    user.className = "userDiv change";
 
     const userID = document.createElement("p");
     userID.textContent = "ID: " + data["id"];
@@ -114,7 +114,7 @@ async function loadUsers() {
 
 function createTasksElement(data) {
     const task = document.createElement("div");
-    task.className = "taskDiv";
+    task.className = "taskDiv change";
 
     const taskID = document.createElement("p");
     taskID.textContent = "ID: " + data["id"];
