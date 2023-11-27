@@ -19,6 +19,12 @@ describe('login.html', () => {
     expect(h1.innerHTML).toContain('Login')
   })
 
+  it('has a title', () => {
+    const title = document.querySelector('title')
+    expect(title.innerHTML).toBe('Log In')
+  })
+
+
   /*it('displays morning when the button is clicked', () => {
     const btn = document.querySelector('button')
     btn.click()
@@ -44,4 +50,18 @@ describe('login.html', () => {
 
     expect(h1.innerHTML).toContain('romeo')
   })*/
+})
+
+
+describe('admin.html', () => {
+  beforeEach(async () => {
+    dom = await renderDOM('./admin.html')
+    document = await dom.window.document
+  })
+
+  it('has a check users button', () => {
+    const btn = document.getElementById("usersBtn");
+    expect(btn).toBeTruthy()
+  })
+
 })
