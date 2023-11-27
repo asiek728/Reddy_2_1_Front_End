@@ -1,18 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Manrope&display=swap');
+
 body {
     margin:0;
     background-color: rgb(91, 149, 214);
+    font-family: 'Manrope', sans-serif;
 }
 
 nav { 
   display: flex;
   justify-content: center;
-  gap:2em;
-  padding:1em;
+  gap: 2em;
+  padding: 1em;
   background-color: rgb(29, 102, 175);
-
 }
 
-a {
+nav a {
     text-decoration: none;
     font-size: 25px;
     color: rgb(17, 64, 110);
@@ -20,11 +23,120 @@ a {
     transition: background-color 0s;
 }
 
-a:hover {
+nav a:hover {
     color: rgb(91, 149, 214);
 }
 
-/*small {
+#login {
+    margin:5em 40em 5em 40em;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(198, 223, 240);/* rgb(192, 226, 243);*/
+    padding: 40px 40px 60px 40px;
+}
+
+h1 {
+    font-size: 40px;
+    color: rgb(17, 64, 110);
+  /*  color: rgb(56, 50, 50);*/
+    font-family: 'Manrope', sans-serif;
+}
+
+fieldset {
+    border-style: none;
+}
+
+#login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+input[type="submit"]{
+    margin-top: 1em;
+    font-size: 22px;
+    background-color:rgb(91, 149, 214);
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    border-radius: 3rem;
+    border-style: none;
+    border-color: aqua;
+    color:rgb(17, 16, 16);
+}
+
+input[type="submit"]:hover {
+    background-color:rgb(117, 163, 216);
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    margin-top: 1.5em;
+}
+
+.bottom-container p {
+    font-size: 18px;
+}
+
+.bottom-container p a {
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(17, 64, 110);
+    font-weight: bold;
+}
+
+.bottom-container p a:hover {
+    color: rgb(117, 163, 216);
+}
+
+#homeBtn {
+    background-color:rgb(91, 149, 214);
+    border-radius: 2rem;
+    padding: 7px 20px 7px 20px;
+    border-style: none;
+    cursor: pointer;
+    font-style: none;
+}
+
+#homeBtn a {
+    text-decoration: none;
+    color: rgb(17, 16, 16);
+    font-size: 22px;
+}
+
+#homeBtn:hover {
+    background-color: rgb(117, 163, 216);
+}
+
+fieldset label {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+}
+
+#login-form  fieldset input {
+    font-size: 17px;
+    padding: 8px;
+    border: 2px solid;
+}
+
+#login-form input:focus {
+    outline: none;
+    border-color: rgb(91, 149, 214);
+}
+
+/**********FOOTER CODE!! DONT DELETE :)****************/
+
+
+/*
+small {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
