@@ -1,0 +1,41 @@
+body {
+    background-color: lightblue;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+    align-items:center;
+    font-size: 30px;
+}
+
+
+
+.container {
+    position: sticky;
+}
+main {
+    display: flex;
+    height: 40vh;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items:center;
+    font-size: 20px;
+}
+
+button {
+    background-color: #11A5D3;
+    width: 10vh;
+    height: 5vh;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+  button:hover {
+    background-color: lightgreen;
+  }
+
