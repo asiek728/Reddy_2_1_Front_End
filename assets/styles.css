@@ -27,7 +27,7 @@ nav a:hover {
     color: rgb(91, 149, 214);
 }
 
-#login {
+#login, #register {
     margin:5em 40em 5em 40em;
     border-radius: 3rem;
     display: flex;
@@ -49,7 +49,7 @@ fieldset {
     border-style: none;
 }
 
-#login-form {
+#login-form, #register-form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,6 +128,17 @@ fieldset label {
 }
 
 #login-form input:focus {
+    outline: none;
+    border-color: rgb(91, 149, 214);
+}
+
+#register-form  fieldset input {
+    font-size: 17px;
+    padding: 8px;
+    border: 2px solid;
+}
+
+#register-form input:focus {
     outline: none;
     border-color: rgb(91, 149, 214);
 }

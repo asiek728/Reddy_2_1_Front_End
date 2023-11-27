@@ -1,3 +1,37 @@
+function openForm() {
+    document.getElementById("newTaskPopup").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("newTaskPopup").style.display = "none";
+}
+
+document.getElementById("newTaskPopup").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.target);
+
+    const options = {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            task_name: form.get("taskName"),
+            status: form.get("status"),
+            num_volunteers_needed: form.get("volunteersNum"),
+            start_date: form.get("startDate")
+        })
+    }
+
+    const result = await fetch("http://localhost:3000/tasks", options);
+
+    if (result.status == 201) {
+        window.location.reload();
+    }
+})
+
 function createUsersElement(data) {
     const user = document.createElement("div");
     user.className = "userDiv";
@@ -66,8 +100,11 @@ function createTasksElement(data) {
     const noNeeded = document.createElement("p");
     noNeeded.textContent = "Number of volunteers needed: " + data["num_volunteers_needed"];
 
-    const startDate = document.createElement("p");
-    startDate.textContent = "Start Date: " + data["start_date"];
+    const startDate = document.createElement("p"); 
+    const dates = data["start_date"];  
+    const originalDates = new Date(dates);
+    const formattedDate = `${originalDates.getDate().toString().padStart(2, '0')}-${(originalDates.getMonth() + 1).toString().padStart(2, '0')}-${originalDates.getFullYear()}`;
+    startDate.textContent = "Start Date: " + formattedDate;
 
     task.appendChild(taskID)
     task.appendChild(name)

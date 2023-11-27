@@ -56,3 +56,54 @@ footer {
     bottom: -28rem;
 }
 
+.newTaskPopup {
+    display: none;
+    position: fixed;
+    top: 20vh;
+    right: 35vw;
+    border: 3px solid #f1f1f1;
+}
+
+.popupContainer {
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+}
+
+
+.popupContainer input[type=text],
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+.popupContainer input[type=text]:focus,
+textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.popupContainer .btn {
+    background-color: rgb(49, 44, 44);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+.popupContainer .cancel {
+    background-color: rgb(49, 44, 44);
+}
+
+.popupContainer .btn:hover,
+.newPostBtn:hover {
+    opacity: 1;
+}
