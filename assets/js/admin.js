@@ -50,10 +50,39 @@ function createUsersElement(data) {
     // tasks.textContent = "tasks: " + data["tasks"];
     tasks.textContent = "tasks: ";
 
-    user.appendChild(tasks)
-    user.appendChild(email)
+    const removeBtn = document.createElement("button")
+    removeBtn.className = "removeBtn";
+    removeBtn.textContent = "remove"
+
+    removeBtn.addEventListener('click', async () => {
+        const options = {
+            headers: {
+                Authorization: localStorage.getItem('token')
+            },
+            method: 'DELETE'
+        };
+        const userResponse = window.confirm("Are you sure that you want to delete this entry?");
+        if (userResponse) {
+            const response = await fetch(
+                `http://localhost:3000/users/${data['id']}`,
+                options
+            );
+
+            if (response.status === 204) {
+                window.location.reload();
+            } else {
+                const respData = await response.json();
+                alert(respData.error);
+            }
+        }
+
+    });
+
     user.appendChild(userID)
     user.appendChild(username)
+    user.appendChild(email)
+    user.appendChild(tasks)
+    user.appendChild(removeBtn)
     return user
 }
 
@@ -100,8 +129,8 @@ function createTasksElement(data) {
     const noNeeded = document.createElement("p");
     noNeeded.textContent = "Number of volunteers needed: " + data["num_volunteers_needed"];
 
-    const startDate = document.createElement("p"); 
-    const dates = data["start_date"];  
+    const startDate = document.createElement("p");
+    const dates = data["start_date"];
     const originalDates = new Date(dates);
     const formattedDate = `${originalDates.getDate().toString().padStart(2, '0')}-${(originalDates.getMonth() + 1).toString().padStart(2, '0')}-${originalDates.getFullYear()}`;
     startDate.textContent = "Start Date: " + formattedDate;
