@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/styles.css">
     <script defer src="./assets/js/login.js"></script>
     <title>Log In</title>
 </head>
 <body>
-    <header>
-        <h1>Log In</h1>
-    </header>
-
     <nav>
         <img src="./assets/favicon-32x32.png" alt="favicon">
         <a href="./index.html">Home</a>
@@ -20,22 +16,27 @@
         <a href="./services.html">Services</a>
         <a href="./register.html">Sign up</a>
     </nav>
-    
-    <hr />
-    <main>
-        <form id="login-form">
-            <fieldset>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" class="detail">
-            </fieldset>
-            <fieldset>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" class="detail">
-            </fieldset>
-            <input type="submit" value="Log in" id="log-in">
-        </form>
-        <p>No account? <a href="./register.html">Sign up here</a>.</p>
-        <p><a href="./index.html">Back to home page</a></p>
-    </main>
+    <section id="login">
+        <header>
+            <h1>Login</h1>
+        </header>
+        <main>
+            <form id="login-form">
+                <fieldset>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" class="detail">
+                </fieldset>
+                <fieldset>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="detail">
+                </fieldset>
+            <input type="submit" value="Sign in" id="log-in">
+            </form>
+            <div class="bottom-container">
+                <p>No account? <a href="./register.html">Sign up here</a></p>
+                <button id="homeBtn"><a href="./index.html">Back to home page</a></button>
+            </div>
+        </main>
+    </section>
 </body>
 </html>
