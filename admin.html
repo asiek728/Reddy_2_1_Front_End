@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=BioRhyme">
+    <!-- <link rel="stylesheet" href="./assets/admin.css"> -->
+    <link rel="shortcut icon" href="./assets/volunteer-icon.ico">
+
+    <script src="./assets/js/admin.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Admin page</title>
+</head>
+
+<body>
+    <nav>
+        <img src="./assets/favicon-32x32.png" alt="favicon">
+        <a href="./index.html">Home</a>
+        <a href="./news.html">News</a>
+        <a href="./services.html">Services</a>
+        <a href="./login.html">Log in</a>
+        <a href="./register.html">Sign up</a>
+    </nav>
+
+    <header>
+        <h1>Admin page</h1>
+    </header>
+
+    <div class="buttons" align="center">
+        <button id="usersBtn">Check users</button>
+        <button id="tasksBtn">Check tasks</button>
+        <button class="tasksBtn" id="tasksBtn" onclick="openForm()">Add a new task</button>
+
+    </div>
+
+    <div class="newTaskPopup" id="newTaskPopup">
+        <form class="popupContainer">
+            <h2>New Task Form</h2>
+            <fieldset id="nameField">
+                <label for="taskName">Task name:</label>
+                <input type="text" id="taskName" name="taskName" required>
+            </fieldset>
+
+            <fieldset id="statusField">
+                <label for="status">Status:</label>
+                <input type="text" id="status" name="status" required>
+            </fieldset>
+
+            <fieldset id="volunteersField">
+                <label for="volunteersNum">Number of volunteers needed:</label>
+                <input type="text" id="volunteersNum" name="volunteersNum" required>
+            </fieldset>
+
+            <fieldset id="startDateField">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </fieldset>
+
+            <input type="submit"  class="btn postBtn" value="Post" id="post">
+            <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+        </form>
+    </div>
+
+    <div class="users" id="users"></div>
+    <div class="tasks" id="tasks"></div>
+
+
+
+
+    <footer>
+        <div class="footer22" align="right" style="font-size: 25px">
+            <small>
+                &copy; Copyright 2023 Florin County Council
+                <a href="#" id="icon" class="fa fa-facebook"></a>
+                <a href="#" id="icon" class="fa fa-twitter"></a>
+                <a href="#" id="icon" class="fa fa-linkedin"></a>
+                <a href="#" id="icon" class="fa fa-youtube"></a>
+            </small>
+        </div>
+    </footer>
+
+</body>
+
+
+
+
+</html>
