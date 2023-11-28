@@ -41,7 +41,7 @@ function createPostElement(data) {
     task.appendChild(header);
 
     const volNum = document.createElement("h3");
-    volNum.textContent = "Number of volunteers: "+data["num_volunteers_needed"];
+    volNum.textContent = "Number of volunteers needed: "+data["num_volunteers_needed"];
     task.appendChild(volNum);
 
     const status = document.createElement("p");
