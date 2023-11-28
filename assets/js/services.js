@@ -14,6 +14,10 @@ function closeEditForm() {
     document.getElementById("edit-form").style.display = "none";
 }
 
+function configureInterface() {
+    document.getElementById("addNewTaskButton").style.display = localStorage.getItem("isAdmin") === "true" ? "block" : "none"
+}
+
 function createPostElement(data) {
     const task = document.createElement("div");
     task.className = "task";
@@ -55,39 +59,40 @@ function createPostElement(data) {
 
     // task.appendChild(content);
 
-    const removeBtn = document.createElement("button")
-    removeBtn.className = "removeBtn";
-    removeBtn.textContent = "remove"
+    if (localStorage.getItem("isAdmin") === "true") {
+        const removeBtn = document.createElement("button")
+        removeBtn.className = "removeBtn";
+        removeBtn.textContent = "remove"
 
-    console.log("line 49")
-    removeBtn.addEventListener('click', async () => {
-        const options = {
-            headers: {
-                Authorization: localStorage.getItem('token')
-            },
-            method: 'DELETE'
-        };
-        const userResponse = window.confirm("Are you sure that you want to delete this entry?");
-        if (userResponse) {
+        console.log("line 49")
+        removeBtn.addEventListener('click', async () => {
+            const options = {
+                headers: {
+                    Authorization: localStorage.getItem('token')
+                },
+                method: 'DELETE'
+            };
+            const userResponse = window.confirm("Are you sure that you want to delete this entry?");
+            if (userResponse) {
 
-            const response = await fetch(
-                `http://localhost:3000/tasks/${data['id']}`,
-                options
-            );
+                const response = await fetch(
+                    `http://localhost:3000/tasks/${data['id']}`,
+                    options
+                );
 
-            if (response.status === 204) {
-                window.location.reload();
-            } else {
-                const respData = await response.json();
-                alert(respData.error);
+                if (response.status === 204) {
+                    window.location.reload();
+                } else {
+                    const respData = await response.json();
+                    alert(respData.error);
+                }
             }
-        }
+        });
 
-    });
+        console.log("line 75")
 
-    console.log("line 75")
-
-    task.appendChild(removeBtn)
+        task.appendChild(removeBtn)
+    }
 
     const editBtn = document.createElement("button")
     editBtn.className = "removeBtn";
@@ -204,3 +209,4 @@ async function loadTasks() {
 }
 
 loadTasks();
+configureInterface();

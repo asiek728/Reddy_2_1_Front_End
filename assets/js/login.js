@@ -19,8 +19,8 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const data = await response.json();
 
     if (response.status == 200) {
-
         localStorage.setItem("token", data.token)
+        localStorage.setItem("isAdmin", data.isAdmin)
         window.location.assign("news.html")
     } else {
         alert(data.error);
