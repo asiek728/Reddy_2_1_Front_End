@@ -40,7 +40,28 @@ function createTasksElement(data) {
     removeBtn.className = "removeBtn";
     removeBtn.textContent = "remove task"
 
-    
+    removeBtn.addEventListener('click', async () => {
+        const options = {
+            headers: {
+                Authorization: localStorage.getItem('token')
+            },
+            method: 'DELETE'
+        };
+        const userResponse = window.confirm("Are you sure that you want to delete this entry?");
+        if (userResponse) {
+            const response = await fetch(
+                `http://localhost:3000/users_tasks/${data['id']}`,
+                options
+            );
+
+            if (response.status === 204) {
+                window.location.reload();
+            } else {
+                const respData = await response.json();
+                alert(respData.error);
+            }
+        }
+    });
 
     task.appendChild(name)
     task.appendChild(status)
