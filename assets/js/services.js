@@ -22,42 +22,32 @@ function createPostElement(data) {
     const task = document.createElement("div");
     task.className = "task";
 
-
     const dateElement = document.createElement("p");
-    // const dates = data["date"]; 
-    // const originalDates = new Date(dates);
-    // const formattedDate = `${originalDates.getDate().toString().padStart(2, '0')}-${(originalDates.getMonth() + 1).toString().padStart(2, '0')}-${originalDates.getFullYear()}`;
-
-    const currentDate = new Date();
-
+    const dates = data["start_date"]; 
+    const currentDate = new Date(dates);
     const year = currentDate.getFullYear();
     const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
     const day = currentDate.getDate().toString().padStart(2, '0');
-    
     const formattedDate = `${year}-${month}-${day}`;
-    dateElement.textContent = formattedDate;
+    dateElement.textContent = "Start date: "+ formattedDate;
     task.appendChild(dateElement);
-    console.log("line 28")
+
+    const endDateElement = document.createElement("p");
+    endDateElement.textContent = "End date: "+ formattedDate;
+    task.appendChild(endDateElement);
+
     const header = document.createElement("h1");
     header.textContent = data["task_name"];
-    console.log(header.textContent)
     task.appendChild(header);
 
     const volNum = document.createElement("h3");
     volNum.textContent = "Number of volunteers: "+data["num_volunteers_needed"];
-    console.log("line 36")
     task.appendChild(volNum);
 
     const status = document.createElement("p");
     status.textContent = "task's status "+ data["status"];
-    console.log("line 36")
     task.appendChild(status);
 
-    // const content = document.createElement("p");
-    // content.textContent = data["content"];
-    // content.setAttribute("contenteditable", "true")
-
-    // task.appendChild(content);
 
     if (localStorage.getItem("isAdmin") === "true") {
         const removeBtn = document.createElement("button")
@@ -127,18 +117,41 @@ function createPostElement(data) {
 
     });
 
-    console.log("line 112")
     task.appendChild(editBtn)
-    console.log("line 114")
-
 
     ///Enrol button
     const enrollBtn = document.createElement("button")
     enrollBtn.className = "enrollBtn";
     enrollBtn.textContent = "Enroll";
+
+    enrollBtn.addEventListener('click', async () => {
+        const options = {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id: localStorage.getItem("userID"),
+                task_id: data["id"],
+                start_date: formattedDate,
+                end_date: formattedDate
+            })
+        }
+
+        const result = await fetch("http://localhost:3000/users_tasks", options);
+
+        if (result.status == 201) {
+            window.location.reload();
+        }
+        
+    })
+
+
+
+
     task.appendChild(enrollBtn)
 
-    
 
     return task;
     
