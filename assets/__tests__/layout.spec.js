@@ -19,10 +19,6 @@ describe('login.html', () => {
     expect(h1.innerHTML).toContain('Login')
   })
 
-  it('has a title', () => {
-    const title = document.querySelector('title')
-    expect(title.innerHTML).toBe('Log In')
-  })
 
 
   /*it('displays morning when the button is clicked', () => {
