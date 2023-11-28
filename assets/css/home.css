@@ -6,8 +6,9 @@
 
 nav { 
   display: flex;
-  justify-content:space-around;
-  gap:2em;
+  justify-content:center;
+  flex-direction: row;
+  gap:3em;
   padding:1em;
   background-color: rgb(29, 102, 175);
 
@@ -36,4 +37,35 @@ h1, p {
     width: 50px;
     text-align: right;
     text-decoration: none;
+}
+
+small {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+    align-items: center;
+    flex-direction: row;
+	padding-top: 1em;
+    padding-bottom: 1em;
+	padding-right: 3em;
+	gap: 3em;
+    padding-left: 3em;
+    margin-top: 5.3em;
+	font-size: 14px;
+	color: rgb(49, 44, 44);
+	border-top: 0.5px solid rgb(176, 237, 245);
+}
+
+small a {
+	color: rgb(31, 29, 29);
+    transition: background-color 0s;
+    text-decoration: none;
+}
+
+small a:hover {
+	color:rgb(68, 70, 73);
+}
+
+#indexHeader {
+    margin-top: 3em;
 }
