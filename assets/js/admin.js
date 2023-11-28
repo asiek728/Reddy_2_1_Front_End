@@ -174,9 +174,7 @@ function createTasksElement(data) {
     editBtn.textContent = "edit task"
 
     editBtn.addEventListener('click', async () => {
-
         openEditForm();
-
         const acceptBtn = document.getElementById("accept");
 
         acceptBtn.addEventListener('click', async () => {
@@ -184,8 +182,6 @@ function createTasksElement(data) {
             const editStatus = document.getElementById("editStatus");
             const editVolunteersNum = document.getElementById("editVolunteersNum");
             const editStartDate = document.getElementById("editStartDate");
-
-            console.log(editTaskName.value, editStatus.value, editVolunteersNum.value, editStartDate.value)
 
             const options = {
                 method: "PATCH",
