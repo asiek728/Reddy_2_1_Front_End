@@ -141,7 +141,12 @@ function createPostElement(data) {
 
         const result = await fetch("http://localhost:3000/users_tasks", options);
 
+        if (result.status == 400) {
+            alert("You already enrolled in this task!");
+        }
+
         if (result.status == 201) {
+            alert("Enrolled!");
             window.location.reload();
         }
         

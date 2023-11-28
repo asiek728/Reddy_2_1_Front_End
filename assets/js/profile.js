@@ -89,9 +89,7 @@ async function loadUserServices() {
             const elem = createTasksElement(p);
             container.appendChild(elem);
         })
-    } else {
-        window.location.assign("./index.html");
-    }
+    } 
 }
 
 loadUserData();
