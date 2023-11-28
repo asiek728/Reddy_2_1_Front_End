@@ -1,26 +1,20 @@
-body {
-    background-color: lightblue;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
+#body {
+    background-color: rgb(91, 149, 214);
+    font-family: "BioRhyme";
 }
 
-.detail {
-    background-color: #11A5D3;
-    width: 100vh;
-    height: 5vh;
-    border-radius: 20px;
-    font-size: 20px;
+.fa {
+    color: black;
+    /* padding: 20px;
+    font-size: 50px; */
+    width: 50px;
+    text-align: right;
+    text-decoration: none;
 }
 
-
-#log-in, #register {
-    background-color: #11A5D3;
-    width: 10vh;
-    height: 5vh;
-    border-radius: 20px;
-    font-size: 20px;
+#registerBtn, #homeBtn {
+    text-align: center;
+    font-family: "BioRhyme";
 }
-
 
 
