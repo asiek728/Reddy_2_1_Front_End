@@ -55,4 +55,4 @@ function changeHref(link_id) {
     }
 }
 
-changeHref("logout_profile_register")
+changeHref("logout_profile_register") 

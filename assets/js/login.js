@@ -58,4 +58,4 @@ function changeHref(link_id) {
     }
 }
 
-changeHref("link_prof_login_page")
+changeHref("link_prof_login_page") 
