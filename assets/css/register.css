@@ -3,6 +3,11 @@
     font-family: "BioRhyme";
 }
 
+h1, #registerBtn, #homeBtn {
+    text-align: center;
+    font-family: "BioRhyme";
+}
+
 .fa {
     color: black;
     /* padding: 20px;
@@ -10,11 +15,6 @@
     width: 50px;
     text-align: right;
     text-decoration: none;
-}
-
-#registerBtn, #homeBtn {
-    text-align: center;
-    font-family: "BioRhyme";
 }
 
 

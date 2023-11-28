@@ -13,7 +13,7 @@ nav {
 
 }
 
-a {
+nav a {
     text-decoration: none;
     font-size: 25px;
     color: rgb(17, 64, 110);
@@ -21,7 +21,7 @@ a {
     transition: background-color 0s;
 }
 
-a:hover {
+nav a:hover {
     color: rgb(91, 149, 214);
 }
 

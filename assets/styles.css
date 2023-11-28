@@ -8,11 +8,12 @@ body {
 }
 
 nav { 
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-  padding: 1em;
-  background-color: rgb(29, 102, 175);
+    display: flex;
+    justify-content:space-around;
+    gap:2em;
+    padding:1em;
+    background-color: rgb(29, 102, 175);
+  
 }
 
 nav a {
