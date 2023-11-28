@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles.css">
-    <script defer src="./assets/js/login.js"></script>
+    <script defer src="./assets/js/profile.js"></script>
     <title>Log In</title>
 </head>
 <body>
@@ -25,16 +25,19 @@
               
             <section id="accountDetails">
                 <div class="userName">
-                    <label> Username: SELECT FROM DB </label>
+                    <label id = "usernameLabel"> Username: SELECT FROM DB </label>
                     <button id="editUsername">Edit</button>
                 </div>
                 <div class="emailAddress">
-                    <label> Email address: SELECT FROM DB </label>
+                    <label id = "emailLabel"> Email address: SELECT FROM DB </label>
                     <button id="editEmail">Edit</button>     
                 </div>
             </section>
             <div class="services"> 
                 <h2>Your services</h2>
+
+                <div id="servicesDiv"></div>
+                
                 <!--<button id="deleteService">Delete</button>-->
                 <button id="homeBtn2"><a href="./index.html">Back to home page</a></button>
             </div>
