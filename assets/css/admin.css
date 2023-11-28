@@ -63,7 +63,7 @@ footer {
     margin-left: 30%;
 }
 
-.newTaskPopup {
+.newTaskPopup, .editTaskPopup {
     display: none;
     position: fixed;
     top: 20vh;
