@@ -22,7 +22,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         localStorage.setItem("token", data.token)
         localStorage.setItem("isAdmin", data.isAdmin)
         localStorage.setItem("userID", data.user_id)
-        window.location.assign("news.html")
+        window.location.assign("index.html")
     } else {
         alert(data.error);
     }
