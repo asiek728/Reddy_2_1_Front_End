@@ -38,6 +38,17 @@ nav a:hover {
     padding: 40px 40px 60px 40px;
 }
 
+#profile {
+    margin:5em 20em 5em 20em;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(198, 223, 240);/* rgb(192, 226, 243);*/
+    /*padding: 40px 40px 60px 40px;*/
+}
+
 h1 {
     font-size: 40px;
     color: rgb(17, 64, 110);
@@ -141,6 +152,75 @@ fieldset label {
 #register-form input:focus {
     outline: none;
     border-color: rgb(91, 149, 214);
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#accountDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3em;
+}
+
+#editEmail {
+    margin-left:1em;
+}
+
+#editUsername {
+    margin-left:1em;
+}
+
+#profileMain {
+    gap: 3em;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeBtn2 {
+    margin: 1.5em;
+    background-color:rgb(91, 149, 214);
+    border-radius: 2rem;
+    padding: 7px 20px 7px 20px;
+    border-style: none;
+    font-size: 22px;
+    cursor: pointer;
+    font-style: none;
+    color: rgb(17, 16, 16);
+}
+
+#homeBtn2 a {
+    text-decoration: none;
+    color: rgb(17, 16, 16);
+    font-size: 22px;
+}
+
+#homeBtn2:hover {
+    background-color: rgb(117, 163, 216);
+}
+
+#editUsername, #editEmail/*, #deleteService */{
+    background-color:rgb(91, 149, 214);
+    border-radius: 2rem;
+    padding: 7px 20px 7px 20px;
+    border-style: none;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+#editUsername:hover, 
+#editEmail:hover {
+    background-color: rgb(117, 163, 216);
 }
 
 /**********FOOTER CODE!! DONT DELETE :)****************/
