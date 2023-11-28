@@ -12,10 +12,10 @@ NOTE: you need both client and server to be running to use the application
  - Type `mkdir [folder name]` to create a new folder.
 
 3. Open new folder  
-  - Type `cd [folder name]`.
+   - Type `cd [folder name]`.
 
 4. Clone repo onto your machine
-  - Type `git clone git@github.com:asiek728/Reddy_2_1_Front_End.git` to clone this repository onto your machine.
+  - Type `git clone git@github.com:asiek728/Reddy_2_1_Front_End.git`.
 
 5. Install required dependencies, including live server 
   - Type `npm install`
