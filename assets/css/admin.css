@@ -12,11 +12,11 @@ main {
 
 nav {
     display: flex;
-    justify-content: space-around;
-    gap: 2em;
+    justify-content: center;
+    flex-direction: row;
+    gap: 3em;
     padding: 1em;
     background-color: rgb(29, 102, 175);
-
 }
 
 a {
@@ -41,7 +41,6 @@ h1 {
     text-decoration: none;
 }
 
-
 #usersBtn,
 #tasksBtn {
     justify-content: space-around;
@@ -57,11 +56,11 @@ h1 {
     font-size: large;
 }
 
-footer {
+/*footer {
     position: absolute;
     bottom: 0;
     margin-left: 30%;
-}
+}*/
 
 .newTaskPopup, .editTaskPopup {
     display: none;
@@ -77,7 +76,6 @@ footer {
     background-color: white;
 }
 
-
 .popupContainer input[type=text],
 textarea {
     width: 100%;
@@ -86,7 +84,6 @@ textarea {
     border: none;
     background: #f1f1f1;
 }
-
 
 .popupContainer input[type=text]:focus,
 textarea:focus {
@@ -115,7 +112,6 @@ textarea:focus {
     opacity: 1;
 }
 
-
 .change {
     padding: 20px;
 }
@@ -127,7 +123,6 @@ textarea:focus {
     flex-wrap: wrap;
     flex-direction: row;
 }
-
 
 .tasks>div, .users>div{
     border-style: solid;

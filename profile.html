@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/volunteer-icon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=BioRhyme">
     <link rel="stylesheet" href="./assets/styles.css">
     <script defer src="./assets/js/login.js"></script>
     <title>Log In</title>
 </head>
-<body>
+<body style="font-family: BioRhyme;">
     <nav>
         <img src="./assets/favicon-32x32.png" alt="favicon">
         <a href="./index.html">Home</a>
@@ -18,28 +20,41 @@
     </nav>
     <section id="profile">
         <header>
-            <h1>Profile</h1>
+            <h1 style="font-family: BioRhyme;">Profile</h1>
         </header>
         <main>
             <h2>Account details</h2>
-              
             <section id="accountDetails">
                 <div class="userName">
                     <label> Username: SELECT FROM DB </label>
-                    <button id="editUsername">Edit</button>
+                    <button id="editUsername" style="font-family: BioRhyme;">Edit</button>
                 </div>
                 <div class="emailAddress">
                     <label> Email address: SELECT FROM DB </label>
-                    <button id="editEmail">Edit</button>     
+                    <button id="editEmail" style="font-family: BioRhyme;">Edit</button>     
                 </div>
             </section>
             <div class="services"> 
                 <h2>Your services</h2>
                 <!--<button id="deleteService">Delete</button>-->
-                <button id="homeBtn2"><a href="./index.html">Back to home page</a></button>
+                <button id="homeBtn2" style="font-family: BioRhyme;"><a href="./index.html">Back to home page</a></button>
             </div>
-            
         </main>
     </section>
+    <footer>
+        <div class="footer22">
+          <small>
+            &copy; Copyright 2023 Florin County Council
+            <a href="#">Privacy Policy</a>  
+            <a href="#">Terms Of Use</a>
+            <a href="#">FAQ</a>  
+            <a href="#">Contact</a>
+            <a href="#" id="icon" class="fa fa-facebook"></a>
+            <a href="#" id="icon" class="fa fa-twitter"></a>
+            <a href="#" id="icon" class="fa fa-linkedin"></a>
+            <a href="#" id="icon" class="fa fa-youtube"></a>
+          </small>
+        </div>   
+      </footer>
 </body>
 </html>
