@@ -6,6 +6,14 @@ function closeForm() {
     document.getElementById("newTaskPopup").style.display = "none";
 }
 
+function openEditForm() {
+    document.getElementById("editTaskPopup").style.display = "block";
+}
+
+function closeEditForm() {
+    document.getElementById("editTaskPopup").style.display = "none";
+}
+
 document.getElementById("newTaskPopup").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -34,7 +42,7 @@ document.getElementById("newTaskPopup").addEventListener("submit", async (e) => 
 
 function createUsersElement(data) {
     const user = document.createElement("div");
-    user.className = "userDiv";
+    user.className = "userDiv change";
 
     const userID = document.createElement("p");
     userID.textContent = "ID: " + data["id"];
@@ -75,7 +83,6 @@ function createUsersElement(data) {
                 alert(respData.error);
             }
         }
-
     });
 
     user.appendChild(userID)
@@ -115,7 +122,7 @@ async function loadUsers() {
 
 function createTasksElement(data) {
     const task = document.createElement("div");
-    task.className = "taskDiv";
+    task.className = "taskDiv change";
 
     const taskID = document.createElement("p");
     taskID.textContent = "ID: " + data["id"];
@@ -135,11 +142,76 @@ function createTasksElement(data) {
     const formattedDate = `${originalDates.getDate().toString().padStart(2, '0')}-${(originalDates.getMonth() + 1).toString().padStart(2, '0')}-${originalDates.getFullYear()}`;
     startDate.textContent = "Start Date: " + formattedDate;
 
+    const removeBtn = document.createElement("button")
+    removeBtn.className = "removeBtn";
+    removeBtn.textContent = "remove task"
+
+    removeBtn.addEventListener('click', async () => {
+        const options = {
+            headers: {
+                Authorization: localStorage.getItem('token')
+            },
+            method: 'DELETE'
+        };
+        const userResponse = window.confirm("Are you sure that you want to delete this entry?");
+        if (userResponse) {
+            const response = await fetch(
+                `http://localhost:3000/tasks/${data['id']}`,
+                options
+            );
+
+            if (response.status === 204) {
+                window.location.reload();
+            } else {
+                const respData = await response.json();
+                alert(respData.error);
+            }
+        }
+    });
+
+    const editBtn = document.createElement("button")
+    editBtn.className = "removeBtn";
+    editBtn.textContent = "edit task"
+
+    editBtn.addEventListener('click', async () => {
+        openEditForm();
+        const acceptBtn = document.getElementById("accept");
+
+        acceptBtn.addEventListener('click', async () => {
+            const editTaskName = document.getElementById("editTaskName");
+            const editStatus = document.getElementById("editStatus");
+            const editVolunteersNum = document.getElementById("editVolunteersNum");
+            const editStartDate = document.getElementById("editStartDate");
+
+            const options = {
+                method: "PATCH",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    task_name: editTaskName.value,
+                    status: editStatus.value,
+                    num_volunteers_needed: editVolunteersNum.value,
+                    start_date: editStartDate.value
+                })
+            }
+
+            const response = await fetch(
+                `http://localhost:3000/tasks/${data['id']}`,
+                options
+            );
+        })
+    });
+
     task.appendChild(taskID)
     task.appendChild(name)
     task.appendChild(status)
     task.appendChild(noNeeded)
     task.appendChild(startDate)
+    task.appendChild(removeBtn)
+    task.appendChild(editBtn)
+
     return task
 }
 
