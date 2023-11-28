@@ -1,0 +1,20 @@
+#body {
+    background-color: rgb(91, 149, 214);
+    font-family: "BioRhyme";
+}
+
+h1, #registerBtn, #homeBtn {
+    text-align: center;
+    font-family: "BioRhyme";
+}
+
+.fa {
+    color: black;
+    /* padding: 20px;
+    font-size: 50px; */
+    width: 50px;
+    text-align: right;
+    text-decoration: none;
+}
+
+
