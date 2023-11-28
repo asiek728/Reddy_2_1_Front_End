@@ -6,6 +6,14 @@ function closeForm() {
     document.getElementById("newTaskPopup").style.display = "none";
 }
 
+function openEditForm() {
+    document.getElementById("editTaskPopup").style.display = "block";
+}
+
+function closeEditForm() {
+    document.getElementById("editTaskPopup").style.display = "none";
+}
+
 document.getElementById("newTaskPopup").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -161,12 +169,53 @@ function createTasksElement(data) {
         }
     });
 
+    const editBtn = document.createElement("button")
+    editBtn.className = "removeBtn";
+    editBtn.textContent = "edit task"
+
+    editBtn.addEventListener('click', async () => {
+
+        openEditForm();
+
+        const acceptBtn = document.getElementById("accept");
+
+        acceptBtn.addEventListener('click', async () => {
+            const editTaskName = document.getElementById("editTaskName");
+            const editStatus = document.getElementById("editStatus");
+            const editVolunteersNum = document.getElementById("editVolunteersNum");
+            const editStartDate = document.getElementById("editStartDate");
+
+            console.log(editTaskName.value, editStatus.value, editVolunteersNum.value, editStartDate.value)
+
+            const options = {
+                method: "PATCH",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    task_name: editTaskName.value,
+                    status: editStatus.value,
+                    num_volunteers_needed: editVolunteersNum.value,
+                    start_date: editStartDate.value
+                })
+            }
+
+            const response = await fetch(
+                `http://localhost:3000/tasks/${data['id']}`,
+                options
+            );
+        })
+    });
+
     task.appendChild(taskID)
     task.appendChild(name)
     task.appendChild(status)
     task.appendChild(noNeeded)
     task.appendChild(startDate)
     task.appendChild(removeBtn)
+    task.appendChild(editBtn)
+
     return task
 }
 
