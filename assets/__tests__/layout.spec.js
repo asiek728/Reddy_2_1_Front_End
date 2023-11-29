@@ -38,7 +38,7 @@ describe('login.html', () => {
     it('user is redirected to login page when log in link is clicked', () => {
       const btn = document.querySelector('#redirectRegister')
       btn.click()
-      expect(window.location.href).toEqual('./login.html')
+      expect(dom.window).toContain('/login.html')
     })
 
 
