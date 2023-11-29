@@ -153,6 +153,8 @@ function loginSignVisable() {
     else {
         const btn = document.getElementById("log-out");
         btn.style.display = 'none';
+        const btn2 = document.getElementById("link6");
+        btn2.style.display = 'none';
     }
 }
 loginSignVisable()
