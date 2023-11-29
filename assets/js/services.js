@@ -49,76 +49,6 @@ function createPostElement(data) {
     task.appendChild(status);
 
 
-    if (localStorage.getItem("isAdmin") === "true") {
-        const removeBtn = document.createElement("button")
-        removeBtn.className = "removeBtn";
-        removeBtn.textContent = "remove"
-
-        console.log("line 49")
-        removeBtn.addEventListener('click', async () => {
-            const options = {
-                headers: {
-                    Authorization: localStorage.getItem('token')
-                },
-                method: 'DELETE'
-            };
-            const userResponse = window.confirm("Are you sure that you want to delete this entry?");
-            if (userResponse) {
-
-                const response = await fetch(
-                    `http://localhost:3000/tasks/${data['id']}`,
-                    options
-                );
-
-                if (response.status === 204) {
-                    window.location.reload();
-                } else {
-                    const respData = await response.json();
-                    alert(respData.error);
-                }
-            }
-        });
-
-        console.log("line 75")
-
-        task.appendChild(removeBtn)
-    }
-
-    const editBtn = document.createElement("button")
-    editBtn.className = "removeBtn";
-    editBtn.textContent = "edit"
-    console.log("line 82")
-    editBtn.addEventListener('click', async () => {
-        console.log("line 84")
-        openEditForm();
-
-        const acceptBtn = document.getElementById("accept");
-
-        acceptBtn.addEventListener('click', async () => {
-            const editStatus = document.getElementById("editStatus");
-
-            const options = {
-                method: "PATCH",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    status: editStatus.value
-                })
-            }
-
-            const response = await fetch(
-                `http://localhost:3000/tasks/${data['id']}`,
-                options
-            );
-
-        })
-
-    });
-
-    task.appendChild(editBtn)
-
     ///Enrol button
     const enrollBtn = document.createElement("button")
     enrollBtn.className = "enrollBtn";
@@ -151,17 +81,10 @@ function createPostElement(data) {
         }
         
     })
-
-
-
-
     task.appendChild(enrollBtn)
-
-
     return task;
     
 }
-console.log("line 114")
 document.getElementById("post-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const currentDate = new Date();
@@ -197,13 +120,8 @@ document.getElementById("post-form").addEventListener("submit", async (e) => {
         window.location.reload();
     }
 })
-console.log("line 139")
-
 
 async function loadTasks() {
-
-    // client/assets/board.js
-    // loadPosts function
     const options = {
         headers: {
             'Authorization': localStorage.getItem("token")
