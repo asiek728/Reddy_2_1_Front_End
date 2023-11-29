@@ -45,7 +45,7 @@ h1 {
     padding: 45px;
 }
 
-.removeBtn, #log-out,.enrollBtn {
+.removeBtn, .enrollBtn {
     background-color: #11A5D3;
     width: 25vh;
     height: 5vh;
