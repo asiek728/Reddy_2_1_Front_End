@@ -77,7 +77,6 @@ textarea {
 body {font-family: "BioRhyme";}
 * {box-sizing: border-box;}
 
-
 .newPostBtn {
 background-color: #555;
 color: white;
@@ -87,7 +86,6 @@ cursor: pointer;
 opacity: 0.8;
 width: 250px;
 }
-
 
 .form-popup {
 display: none;
@@ -149,7 +147,7 @@ small {
   align-items: center;
   flex-direction: row;
 	padding-top: 2em;
-  padding-bottom: 1em;
+  padding-bottom: 2em;
 	padding-right: 3em;
 	gap: 3em;
   padding-left: 3em;
@@ -170,10 +168,14 @@ small a:hover {
 }
 
 footer {
-  padding-top: 4em;
+  padding-top: 2.6em;
 }
 
 main {
   margin-top: 2em;
   margin-right:2em;
+}
+nav img {
+  width: 39px;
+  height: 39px;
 }

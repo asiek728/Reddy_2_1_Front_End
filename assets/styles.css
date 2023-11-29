@@ -6,12 +6,11 @@ body {
 
 nav { 
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: row;
     gap:3em;
     padding:1em;
     background-color: rgb(29, 102, 175);
-  
 }
 
 nav a {
@@ -26,8 +25,13 @@ nav a:hover {
     color: rgb(91, 149, 214);
 }
 
+nav img {
+    width: 39px;
+    height: 39px;
+}
+
 #login {
-    margin:3em 35em 5em 35em;
+    margin:3em 38em 5em 38em;
     border-radius: 3rem;
     display: flex;
     justify-content: center;
@@ -38,7 +42,7 @@ nav a:hover {
 }
 
 #register {
-    margin:3em 35em 3em 35em;
+    margin:2.7em 38em 3em 38em;
     border-radius: 3rem;
     display: flex;
     justify-content: center;
@@ -91,7 +95,6 @@ input[type="submit"]{
 input[type="submit"]:hover {
     background-color:rgb(117, 163, 216);
 }
-
 .bottom-container {
     display: flex;
     justify-content: center;
@@ -154,7 +157,7 @@ fieldset label {
 
 #register-form  fieldset input {
     font-size: 17px;
-    padding: 8px;
+    padding: 8px 30px 10px 0px;
     border: 2px solid;
 }
 
@@ -272,7 +275,7 @@ small a:hover {
     align-items: center;
     flex-direction: column;
 }
-/*
+/**
 #servicesDiv {
     background-color: rgb(198, 223, 240);
 }*/

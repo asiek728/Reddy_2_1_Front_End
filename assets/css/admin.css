@@ -27,8 +27,19 @@ nav a {
     transition: background-color 0s;
 }
 
+nav a:hover {
+    color: rgb(91, 149, 214);
+}
+
+nav img {
+    width: 39px;
+    height: 39px;
+}
+
 h1 {
+    margin-top: 5em;
     text-align: center;
+    color:rgb(17, 64, 110); ;
 
 }
 
@@ -43,19 +54,29 @@ h1 {
 
 #usersBtn,
 #tasksBtn {
-    justify-content: space-around;
-    padding-top: 5px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    background-color: aquamarine;
-    border-radius: 15%;
 
+     padding: 10px 20px 10px 20px;
+    background-color: rgb(7, 28, 58);
+    border-radius: 3rem;
+    margin-top: 1em;
     align-content: center;
     font-family: "BioRhyme";
     font-size: large;
+    cursor: pointer;
+    border-style: none;
+    color:rgb(219, 205, 205);
 }
 
+.buttons {
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+main  button:hover {
+    background-color: rgb(21, 61, 129);
+}
 /*footer {
     position: absolute;
     bottom: 0;
@@ -145,7 +166,7 @@ small {
 	padding-right: 3em;
 	gap: 3em;
     padding-left: 3em;
-    margin-top: 37em;
+    margin-top: 16em;
 	font-size: 14px;
 	color: rgb(49, 44, 44);
 	border-top: 0.5px solid rgb(176, 237, 245);
