@@ -2,6 +2,15 @@
 function openForm() {
     document.getElementById("edit-form").style.display = "block";
 }
+
+function profileVisible() {
+    const token=localStorage.getItem("token")
+    if (!token) {
+        const btn = document.getElementById("link6");
+        btn.style.display = 'none';
+    }
+}
+
 async function loadUserData() {
     const options = {
         headers: {
@@ -99,11 +108,11 @@ async function loadUserServices() {
 function loginSignVisable(){
     const token=localStorage.getItem("token")
     if (token) {
-        // const link4 = document.getElementById("link4");
-        const link5 = document.getElementById("link5");
-        // link4.style.display = 'none';
-        link5.style.display = 'none';
-
+        const link4 = document.getElementById("link4");
+       /* const link5 = document.getElementById("link5");*/
+        link4.style.display = 'none';
+      
+        
     }
     else {
         const btn = document.getElementById("log-out");
@@ -214,7 +223,7 @@ function editEmail() {
 editUsername()
 editEmail()
  
-
+profileVisible();
 loginSignVisable()
 loadUserData();
 loadUserServices();

@@ -39,7 +39,6 @@ function changeHref(link_id) {
     console.log("isAdmin line 8 " + is_ad)
     if (is_ad === "true") {
         console.log("isAdmin line 14 " + link.href)
-
     
     link.href = "./admin.html";  
     console.log("It s admin")
