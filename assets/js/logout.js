@@ -7,6 +7,4 @@ document.getElementById('log-out').addEventListener("click", async () => {
 
     localStorage.removeItem("token")
     localStorage.removeItem("isAdmin")
-    localStorage.removeItem("userID")
-    
 })
