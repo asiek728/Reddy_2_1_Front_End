@@ -18,8 +18,9 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
     const response = await fetch("http://localhost:3000/users/login", options);
     const data = await response.json();
-
+    
     if (response.status == 200) {
+        localStorage.clear()
         localStorage.setItem("token", data.token)
         localStorage.setItem("isAdmin", data.isAdmin)
         localStorage.setItem("userID", data.user_id)
