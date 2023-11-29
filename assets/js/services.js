@@ -141,7 +141,7 @@ async function loadTasks() {
 
 }
 
-function loginSignVisable(){
+function loginSignVisable() {
     const token=localStorage.getItem("token")
     if (token) {
         const link4 = document.getElementById("link4");
