@@ -250,6 +250,10 @@ function closeUsers() {
     document.querySelectorAll(".userDiv").forEach(el => el.remove());
 }
 
+if (localStorage.getItem("isAdmin") != "true") {
+    window.location.href = "500.html";
+}
+
 const usersBtn = document.getElementById("usersBtn");
 const tasksBtn = document.getElementById("tasksBtn");
 
