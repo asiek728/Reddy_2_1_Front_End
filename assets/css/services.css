@@ -139,7 +139,7 @@ opacity: 1;
 }
 
 .container {
-  padding-bottom: 500px;
+  padding-bottom: 50px;
 }
 
 small {
@@ -170,11 +170,10 @@ small a:hover {
 }
 
 footer {
-  margin-top: 2em;
+  padding-top: 4em;
 }
 
 main {
   margin-top: 2em;
-  margin-left:4em;
-  margin-right:4em;
+  margin-right:2em;
 }
