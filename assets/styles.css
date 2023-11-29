@@ -152,27 +152,27 @@ fieldset label {
     border-color: rgb(91, 149, 214);
 }
 
-.services {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 
 #accountDetails {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    gap: 3em;
+    flex-direction: column;
+    gap: 0.5em;
 }
 
-#editEmail {
+#editEmail, #editUsername{
     margin-left:1em;
 }
 
-#editUsername {
-    margin-left:1em;
+.userName {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.userName #usernameLabel{
+    margin-right: 2em;
 }
 
 #profileMain {
@@ -210,9 +210,9 @@ h2 {
 #editUsername, #editEmail/*, #deleteService */{
     background-color:rgb(91, 149, 214);
     border-radius: 2rem;
-    padding: 7px 20px 7px 20px;
+    padding: 5px 13px 5px 13px;
     border-style: none;
-    font-size: 19px;
+    font-size: 17px;
     cursor: pointer;
 }
 
@@ -255,5 +255,15 @@ small a:hover {
     width: 50px;
     text-align: right;
     text-decoration: none;
-    
 }
+
+.services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/*
+#servicesDiv {
+    background-color: rgb(198, 223, 240);
+}*/
