@@ -226,5 +226,21 @@ async function loadTasks() {
 
 }
 
+function loginSignVisable(){
+    const token=localStorage.getItem("token")
+    if (token) {
+        const link4 = document.getElementById("link4");
+        const link5 = document.getElementById("link5");
+        link4.style.display = 'none';
+        link5.style.display = 'none';
+
+    }
+    else {
+        const btn = document.getElementById("log-out");
+        btn.style.display = 'none';
+    }
+}
+loginSignVisable()
+
 loadTasks();
 configureInterface();
