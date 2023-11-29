@@ -51,12 +51,15 @@ function createUsersElement(data) {
     username.textContent = "Username: " + data["username"];
 
     const email = document.createElement("p");
-    // email.textContent = "Email: " + data["email"];
-    email.textContent = "Email: ";
+    email.textContent = "Email: " + data["email"];
 
-    const tasks = document.createElement("p");
-    // tasks.textContent = "tasks: " + data["tasks"];
-    tasks.textContent = "tasks: ";
+    const volunteering = document.createElement("p");
+    volunteering.textContent = "User volunteers in:";
+
+    const tasks = document.createElement("div");
+    tasks.id = "userTasksDiv"
+
+    loadUserServices(data["id"]);
 
     const removeBtn = document.createElement("button")
     removeBtn.className = "removeBtn";
@@ -88,9 +91,39 @@ function createUsersElement(data) {
     user.appendChild(userID)
     user.appendChild(username)
     user.appendChild(email)
+    user.appendChild(volunteering)
     user.appendChild(tasks)
     user.appendChild(removeBtn)
     return user
+}
+
+function createUserTasksElement(data) {
+    const task = document.createElement("div");
+    task.className = "taskDiv";
+    const name = document.createElement("p");
+    name.textContent = "Task: " + data["task_name"];
+    task.appendChild(name)
+    return task
+}
+
+async function loadUserServices(userID) {
+    const options = {
+        headers: {
+            'Authorization': localStorage.getItem("token")
+        }
+    }
+
+    const response = await fetch(`http://localhost:3000/users_tasks/${userID}`, options);
+
+    if (response.status == 200) {
+        const tasks = await response.json();
+        const container = document.getElementById("userTasksDiv");
+
+        tasks.forEach(p => {
+            const elem = createUserTasksElement(p);
+            container.appendChild(elem);
+        })
+    } 
 }
 
 async function loadUsers() {
