@@ -24,7 +24,12 @@ describe('login.html', () => {
       dom = await renderDOM('./register.html')
       document = await dom.window.document
     })
-  
+
+    it('link displays Log in here', () => {
+      const link = document.querySelector('#redirectRegister')
+      expect(link.innerHTML).toContain('Log in here')
+    })
+
     it('has a footer', () => {
       const footer = document.querySelector('footer')
       expect(footer).toBeTruthy()
@@ -40,7 +45,6 @@ describe('login.html', () => {
       btn.click()
       expect(dom.window).toContain('/login.html')
     })
-
 
    it('input are empty when the page loads', () => {
       const username = document.querySelector('#username')
