@@ -26,7 +26,7 @@ nav a:hover {
     color: rgb(91, 149, 214);
 }
 
-#login, #register {
+#login {
     margin:3em 35em 5em 35em;
     border-radius: 3rem;
     display: flex;
@@ -37,8 +37,19 @@ nav a:hover {
     padding: 40px 40px 60px 40px;
 }
 
+#register {
+    margin:3em 35em 3em 35em;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(198, 223, 240);/* rgb(192, 226, 243);*/
+    padding: 0 30px 50px 30px;
+}
+
 #profile {
-    margin:5em 20em 16em 20em;
+    margin:5em 20em 10em 20em;
     border-radius: 3rem;
     display: flex;
     justify-content: center;
@@ -152,8 +163,6 @@ fieldset label {
     border-color: rgb(91, 149, 214);
 }
 
-
-
 #accountDetails {
     display: flex;
     justify-content: center;
@@ -232,7 +241,7 @@ small {
 	padding-right: 3em;
 	gap: 3em;
     padding-left: 3em;
-    margin-top: 5.5em;
+    /*margin-top: 5.5em;*/
 	font-size: 14px;
 	color: rgb(49, 44, 44);
 	border-top: 0.5px solid rgb(176, 237, 245);
