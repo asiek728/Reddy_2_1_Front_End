@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=BioRhyme">
     <script defer src="./assets/js/services.js"></script>
     <script defer src="./assets/js/logout.js"></script>
-    <link rel="stylesheet" href="./assets/styles.css">
+    <!--<link rel="stylesheet" href="./assets/styles.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/services.css">
     <!-- <script src="./assets/index.js" defer></script> -->
@@ -23,20 +23,15 @@
         <button id="log-out"><a href="./index.html">Log out</a></button>
 
     </nav>
-
-  
-    
         <header>
             <h1 id="body">Services</h1>
         </header>
-    
         <hr/>
         <main>
             <!-- Only for admin -->
             <div class="addPost" id="addNewTaskButton">
                 <button class="newPostBtn" onclick="openForm()">Add a new task</button>
             </div> 
-    
             <div class="form-popup" id="post-form">
                 <form class="form-container">
                     <h2>Task Update</h2>
@@ -44,66 +39,32 @@
                         <label for="title">Task</label>
                         <input type="text" id="title" name="title" required>
                     </fieldset>
-
-                    <!-- <fieldset id="categoryField">
-                        <label for="category">Category:</label>
-                        <input type="text" id="category" name="category" required>
-                    </fieldset> -->
-    
                     <fieldset id="categoryField">
                         <label for="volNum">Number of volunteering </label>
                         <input type="text" id="volNum" name="volNum" required>
                     </fieldset>
-
-                    <!-- <fieldset id="status">
-                        <label for="status">Status of task </label>
-                        <input type="text" id="status" name="status" required>
-                    </fieldset> -->
-    
-                    <!-- <fieldset>
-                        <label for="title">Start date</label>
-                        <textarea id="start_date" name="start_date" required></textarea>
-                    </fieldset> -->
-
-                    <!-- <fieldset>
-                        <label for="title">Content</label>
-                        <textarea id="content" name="content" required></textarea>
-                    </fieldset> -->
-
-
                     <input type="submit"  class="btn postBtn" value="Post" id="post">
                     <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
                 </form>
             </div>
-    
             <div class="form-popup" id="edit-form">
                 <form class="form-container">
                     <h2>Edit task status</h2>
-    
-                    <!-- <fieldset>
-                        <label for="title">Content:</label>
-                        <textarea id="editContent" name="content" required></textarea>
-                    </fieldset> -->
-
                     <fieldset>
                         <label for="status">Status:</label>
                         <textarea id="editStatus" name="content" required></textarea>
                     </fieldset>
-
                     <input type="submit"  class="btn acceptBtn" value="Accept" id="accept">
                     <button type="button" class="btn cancel" onclick="closeEditForm()">Cancel</button>
                 </form>
             </div>
-    
             <div class="container" id="tasks" style="overflow-y:scroll;">
-    
             </div>
             <hr />
-    
         </main>
-        <nav>
+        <section id="logoutBtn">
             <button id="log-out"><a href="./index.html">Log out</a></button>
-        </nav>  
+        </section>  
         <footer>
 	        <div class="footer22">
 	            <small>
