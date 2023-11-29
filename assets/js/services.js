@@ -143,9 +143,7 @@ async function loadTasks() {
 function changeHref() {
     const is_ad=localStorage.getItem("isAdmin")
     const link = document.getElementById("link6");
-
     if (is_ad === "true" ) {
-        console.log("true")
     link.href = "./admin.html";  
     }
     else if(is_ad === "false" ) {
@@ -163,7 +161,6 @@ function loginSignVisable() {
         const link5 = document.getElementById("link5");
         link4.style.display = 'none';
         link5.style.display = 'none';
-
     }
     else {
         const btn = document.getElementById("log-out");
