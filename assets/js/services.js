@@ -161,7 +161,6 @@ function createPostElement(data) {
     return task;
     
 }
-console.log("line 114")
 document.getElementById("post-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const currentDate = new Date();
@@ -197,13 +196,8 @@ document.getElementById("post-form").addEventListener("submit", async (e) => {
         window.location.reload();
     }
 })
-console.log("line 139")
-
 
 async function loadTasks() {
-
-    // client/assets/board.js
-    // loadPosts function
     const options = {
         headers: {
             'Authorization': localStorage.getItem("token")
