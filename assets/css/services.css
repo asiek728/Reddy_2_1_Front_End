@@ -60,18 +60,14 @@ h1 {
     border-radius: 20px;
     font-size: 20px;
 }
-/* .post {
-    width: 90vw;
-    padding: 15px;
-    border-radius: 20px;
-    border-style: groove;
-} */
 
 .task {
-  width: 90vw;
+  width: 40vw;
   padding: 15px;
   border-radius: 20px;
   border-style: groove;
+  margin-left: 5vw;
+  margin-bottom: 1vw;
 }
 
 textarea {

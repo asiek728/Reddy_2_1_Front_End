@@ -41,7 +41,7 @@ function createPostElement(data) {
     task.appendChild(header);
 
     const volNum = document.createElement("h3");
-    volNum.textContent = "Number of volunteers: "+data["num_volunteers_needed"];
+    volNum.textContent = "Number of volunteers needed: "+data["num_volunteers_needed"];
     task.appendChild(volNum);
 
     const status = document.createElement("p");
@@ -141,7 +141,12 @@ function createPostElement(data) {
 
         const result = await fetch("http://localhost:3000/users_tasks", options);
 
+        if (result.status == 400) {
+            alert("You already enrolled in this task!");
+        }
+
         if (result.status == 201) {
+            alert("Enrolled!");
             window.location.reload();
         }
         
@@ -220,6 +225,22 @@ async function loadTasks() {
     }
 
 }
+
+function loginSignVisable(){
+    const token=localStorage.getItem("token")
+    if (token) {
+        const link4 = document.getElementById("link4");
+        const link5 = document.getElementById("link5");
+        link4.style.display = 'none';
+        link5.style.display = 'none';
+
+    }
+    else {
+        const btn = document.getElementById("log-out");
+        btn.style.display = 'none';
+    }
+}
+loginSignVisable()
 
 loadTasks();
 configureInterface();
