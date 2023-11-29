@@ -140,11 +140,12 @@ async function loadTasks() {
     }
 }
 
-function changeHref(link_id) {
+function changeHref() {
     const is_ad=localStorage.getItem("isAdmin")
-    const link = document.getElementById(link_id);
+    const link = document.getElementById("link6");
 
     if (is_ad === "true" ) {
+        console.log("true")
     link.href = "./admin.html";  
     }
     else if(is_ad === "false" ) {
@@ -171,8 +172,8 @@ function loginSignVisable() {
         btn2.style.display = 'none';
     }
 }
-loginSignVisable()
 
+changeHref()
+loginSignVisable()
 loadTasks();
 configureInterface();
-changeHref('link6')
