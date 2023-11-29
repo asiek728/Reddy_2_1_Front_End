@@ -52,7 +52,7 @@ h1 {
     text-decoration: none;
 }
 
-#usersBtn,
+#usersBtn, #newsBtn, #updateBtn,
 #tasksBtn {
 
      padding: 10px 20px 10px 20px;
@@ -83,7 +83,7 @@ main  button:hover {
     margin-left: 30%;
 }*/
 
-.newTaskPopup, .editTaskPopup {
+.newTaskPopup, .editTaskPopup, .editNewsPopup, .newUpdatePopup {
     display: none;
     position: fixed;
     top: 20vh;
