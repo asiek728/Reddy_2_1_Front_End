@@ -45,7 +45,7 @@ function createPostElement(data) {
     task.appendChild(volNum);
 
     const status = document.createElement("p");
-    status.textContent = "task's status "+ data["status"];
+    status.textContent = "Task status: "+ data["status"];
     task.appendChild(status);
 
 
@@ -108,9 +108,6 @@ document.getElementById("post-form").addEventListener("submit", async (e) => {
             task_name: form.get("title"),
             num_volunteers_needed: form.get("volNum"),
             start_date:formattedDate
-            
-            
-            
         })
     }
 
