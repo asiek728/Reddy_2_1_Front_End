@@ -138,7 +138,21 @@ async function loadTasks() {
     } else {
         window.location.assign("./index.html");
     }
+}
 
+function changeHref(link_id) {
+    const is_ad=localStorage.getItem("isAdmin")
+    const link = document.getElementById(link_id);
+
+    if (is_ad === "true" ) {
+    link.href = "./admin.html";  
+    }
+    else if(is_ad === "false" ) {
+        link.href = './profile.html';
+    }
+    else {
+        link.style.display = 'none';
+    }
 }
 
 function loginSignVisable() {
@@ -161,3 +175,4 @@ loginSignVisable()
 
 loadTasks();
 configureInterface();
+changeHref('link6')
