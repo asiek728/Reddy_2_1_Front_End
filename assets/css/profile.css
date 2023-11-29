@@ -11,6 +11,11 @@
     background-color: white;
   }
 
+  nav img {
+    width: 39px;
+    height: 39px;
+}
+
 
 .form-container input[type=text]:focus, textarea:focus {
     background-color: #ddd;
