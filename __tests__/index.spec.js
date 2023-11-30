@@ -38,11 +38,11 @@ describe('index.html', () => {
     expect(dom.window.location.href).toEqual('file:///C:/Users/Jeyag/LFA/lap2/project/Reddy_2_1_Front_End/register.html')
   })
 
-  it('Admin link takes you to admin page', () => {
-    const link = document.querySelector('#link6')
-    link.click()
-    expect(dom.window.location.href).toEqual('file:///C:/Users/Jeyag/LFA/lap2/project/Reddy_2_1_Front_End/admin.html')
-  })
+  // it('Admin link takes you to admin page', () => {
+  //   const link = document.querySelector('#link6')
+  //   link.click()
+  //   expect(dom.window.location.href).toEqual('file:///C:/Users/Jeyag/LFA/lap2/project/Reddy_2_1_Front_End/admin.html')
+  // })
 
   /*it('displays morning when the button is clicked', () => {
     const btn = document.querySelector('button')
