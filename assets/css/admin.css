@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: rgb(91, 149, 214);
+    background-color: rgb(34, 59, 88);
     font-family: "BioRhyme";
     display: flex;
     flex-direction: column;
@@ -37,9 +37,9 @@ nav img {
 }
 
 h1 {
-    margin-top: 5em;
+    margin-top: 1em;
     text-align: center;
-    color:rgb(17, 64, 110); ;
+    color:rgb(32, 118, 204); ;
 
 }
 
@@ -55,8 +55,8 @@ h1 {
 #usersBtn, #newsBtn, #updateBtn,
 #tasksBtn {
 
-     padding: 10px 20px 10px 20px;
-    background-color: rgb(7, 28, 58);
+    padding: 10px 30px 10px 30px;
+    background-color: rgb(32, 118, 204); 
     border-radius: 3rem;
     margin-top: 1em;
     align-content: center;
@@ -67,6 +67,11 @@ h1 {
     color:rgb(219, 205, 205);
 }
 
+#usersBtn:hover, #newsBtn:hover, #updateBtn:hover,
+#tasksBtn:hover {
+    background-color:  rgb(100, 156, 241); 
+}
+
 .buttons {
    display:flex;
    justify-content: center;
@@ -74,9 +79,9 @@ h1 {
    flex-direction: column;
 }
 
-main  button:hover {
+/*main  button:hover {
     background-color: rgb(21, 61, 129);
-}
+}*/
 /*footer {
     position: absolute;
     bottom: 0;
@@ -137,22 +142,28 @@ textarea:focus {
     padding: 20px;
 }
 
-.users, .news,
+.news,
 .tasks {
-    margin: 20px;
+  /*  
+    display: flex;
+    
+    flex-direction: row;*/
+    /*margin: 20px;*/
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    color:white
 }
 
 .tasks>div, .users>div, .news>div{
     border-style: solid;
+    border-color:rgb(37, 37, 240); ;
     border-radius: 15px;
     margin: 15px;
-}
-
-.tasks>:first-child, .news>:first-child, .users>:first-child {
-    flex: 0 1 90%;
+    background-color: rgb(32, 118, 204); ;
 }
 
 small {
@@ -170,6 +181,7 @@ small {
 	font-size: 14px;
 	color: rgb(49, 44, 44);
 	border-top: 0.5px solid rgb(176, 237, 245);
+    background-color: rgb(29, 102, 175);
 }
 
 small a {
@@ -180,4 +192,35 @@ small a {
 
 small a:hover {
 	color:rgb(68, 70, 73);
+}
+
+.users {
+    color: white;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 3em;
+   /* margin-right: 4em;*/
+    display: flex;
+   /* flex-wrap: wrap;*/
+    flex-direction: row;
+    /*justify-content: center;
+    align-items: center;*/
+    gap: 1em;
+    color:white
+}
+
+.removeBtn { 
+    margin-left:2em;
+    margin-right: 2em;
+    border-style: solid;
+    border-color:blue; ;
+    border-radius: 8px;
+    background-color: rgb(7, 77, 146); 
+    cursor: pointer;
+    padding: 10px;
+    font-size: 19px;
+}
+    
+.removeBtn:hover {
+    background-color: rgb(20, 95, 170); ;
 }
