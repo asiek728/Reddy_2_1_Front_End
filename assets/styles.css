@@ -1,20 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Manrope&display=swap');
-
 body {
     margin:0;
     background-color: rgb(91, 149, 214);
-   /* font-family: 'Manrope', sans-serif;*/
+    font-family: "BioRhyme";
 }
 
 nav { 
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: row;
     gap:3em;
     padding:1em;
     background-color: rgb(29, 102, 175);
-  
 }
 
 nav a {
@@ -29,8 +25,13 @@ nav a:hover {
     color: rgb(91, 149, 214);
 }
 
-#login, #register {
-    margin:3em 35em 5em 35em;
+nav img {
+    width: 39px;
+    height: 39px;
+}
+
+#login {
+    margin:3em 38em 5em 38em;
     border-radius: 3rem;
     display: flex;
     justify-content: center;
@@ -40,8 +41,19 @@ nav a:hover {
     padding: 40px 40px 60px 40px;
 }
 
+#register {
+    margin:2.7em 38em 3em 38em;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(198, 223, 240);/* rgb(192, 226, 243);*/
+    padding: 0 30px 50px 30px;
+}
+
 #profile {
-    margin:5em 20em 16em 20em;
+    margin:5em 20em 10em 20em;
     border-radius: 3rem;
     display: flex;
     justify-content: center;
@@ -69,7 +81,7 @@ fieldset {
 
 input[type="submit"]{
     margin-top: 1em;
-    font-size: 22px;
+    font-size: 20px;
     background-color:rgb(91, 149, 214);
     cursor: pointer;
     padding: 10px 20px 10px 20px;
@@ -77,12 +89,12 @@ input[type="submit"]{
     border-style: none;
     border-color: aqua;
     color:rgb(17, 16, 16);
+    font-family: "BioRhyme";
 }
 
 input[type="submit"]:hover {
     background-color:rgb(117, 163, 216);
 }
-
 .bottom-container {
     display: flex;
     justify-content: center;
@@ -118,7 +130,7 @@ input[type="submit"]:hover {
 #homeBtn a {
     text-decoration: none;
     color: rgb(17, 16, 16);
-    font-size: 22px;
+    font-size: 21px;
 }
 
 #homeBtn:hover {
@@ -145,7 +157,7 @@ fieldset label {
 
 #register-form  fieldset input {
     font-size: 17px;
-    padding: 8px;
+    padding: 8px 30px 10px 0px;
     border: 2px solid;
 }
 
@@ -154,27 +166,25 @@ fieldset label {
     border-color: rgb(91, 149, 214);
 }
 
-.services {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 #accountDetails {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    gap: 3em;
+    flex-direction: column;
+    gap: 0.5em;
 }
 
-#editEmail {
+#editEmail, #editUsername{
     margin-left:1em;
 }
 
-#editUsername {
-    margin-left:1em;
+.userName {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.userName #usernameLabel{
+    margin-right: 2em;
 }
 
 #profileMain {
@@ -212,9 +222,9 @@ h2 {
 #editUsername, #editEmail/*, #deleteService */{
     background-color:rgb(91, 149, 214);
     border-radius: 2rem;
-    padding: 7px 20px 7px 20px;
+    padding: 5px 13px 5px 13px;
     border-style: none;
-    font-size: 19px;
+    font-size: 17px;
     cursor: pointer;
 }
 
@@ -234,7 +244,7 @@ small {
 	padding-right: 3em;
 	gap: 3em;
     padding-left: 3em;
-    margin-top: 5.5em;
+    /*margin-top: 5.5em;*/
 	font-size: 14px;
 	color: rgb(49, 44, 44);
 	border-top: 0.5px solid rgb(176, 237, 245);
@@ -257,5 +267,15 @@ small a:hover {
     width: 50px;
     text-align: right;
     text-decoration: none;
-    
 }
+
+.services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/**
+#servicesDiv {
+    background-color: rgb(198, 223, 240);
+}*/

@@ -137,8 +137,6 @@ document.getElementById("post-form").addEventListener("submit", async (e) => {
 
 async function loadPosts() {
 
-    // client/assets/board.js
-    // loadPosts function
     const options = {
         headers: {
             'Authorization': localStorage.getItem("token")

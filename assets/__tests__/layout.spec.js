@@ -19,7 +19,47 @@ describe('login.html', () => {
     expect(h1.innerHTML).toContain('Login')
   })
 
+  describe('register.html', () => {
+    beforeEach(async () => {
+      dom = await renderDOM('./register.html')
+      document = await dom.window.document
+    })
 
+    it('link displays Log in here', () => {
+      const link = document.querySelector('#redirectRegister')
+      expect(link.innerHTML).toContain('Log in here')
+    })
+
+    it('has a footer', () => {
+      const footer = document.querySelector('footer')
+      expect(footer).toBeTruthy()
+    })
+
+    it('h1 displays Register an account', () => {
+      const h1 = document.querySelector('h1')
+      expect(h1.innerHTML).toContain('Register an account')
+    })
+
+    it('user is redirected to login page when log in link is clicked', () => {
+      const btn = document.querySelector('#redirectRegister')
+      btn.click()
+      expect(dom.window).toContain('/login.html')
+    })
+
+   it('input are empty when the page loads', () => {
+      const username = document.querySelector('#username')
+      const password = document.querySelector('#password')
+      const emailAddress = document.querySelector('#emailAddress')
+      expect(username.innerHTML).toContain('')
+      expect(password.innerHTML).toContain('')
+      expect(emailAddress.innerHTML).toContain('')
+    })
+    
+    it('user is redirected when home button is clicked', () => {
+      const btn = document.querySelector('#homeBtn')
+      btn.click()
+      expect(window.location.href).toEqual('/index.html')
+    })
 
   /*it('displays morning when the button is clicked', () => {
     const btn = document.querySelector('button')
@@ -56,8 +96,15 @@ describe('admin.html', () => {
   })
 
   it('has a check users button', () => {
-    const btn = document.getElementById("usersBtn");
+    const btn = document.getElementById('usersBtn');
     expect(btn).toBeTruthy()
   })
 
+  it('has check task button', () => {
+    const btn1 = document.getElementById('tasksBtn');
+    expect(btn1).toBeTruthy()
+  
+  })
+
+})
 })

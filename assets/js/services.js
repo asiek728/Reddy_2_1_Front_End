@@ -45,79 +45,9 @@ function createPostElement(data) {
     task.appendChild(volNum);
 
     const status = document.createElement("p");
-    status.textContent = "task's status "+ data["status"];
+    status.textContent = "Task status: "+ data["status"];
     task.appendChild(status);
 
-
-    if (localStorage.getItem("isAdmin") === "true") {
-        const removeBtn = document.createElement("button")
-        removeBtn.className = "removeBtn";
-        removeBtn.textContent = "remove"
-
-        console.log("line 49")
-        removeBtn.addEventListener('click', async () => {
-            const options = {
-                headers: {
-                    Authorization: localStorage.getItem('token')
-                },
-                method: 'DELETE'
-            };
-            const userResponse = window.confirm("Are you sure that you want to delete this entry?");
-            if (userResponse) {
-
-                const response = await fetch(
-                    `http://localhost:3000/tasks/${data['id']}`,
-                    options
-                );
-
-                if (response.status === 204) {
-                    window.location.reload();
-                } else {
-                    const respData = await response.json();
-                    alert(respData.error);
-                }
-            }
-        });
-
-        console.log("line 75")
-
-        task.appendChild(removeBtn)
-    }
-
-    const editBtn = document.createElement("button")
-    editBtn.className = "removeBtn";
-    editBtn.textContent = "edit"
-    console.log("line 82")
-    editBtn.addEventListener('click', async () => {
-        console.log("line 84")
-        openEditForm();
-
-        const acceptBtn = document.getElementById("accept");
-
-        acceptBtn.addEventListener('click', async () => {
-            const editStatus = document.getElementById("editStatus");
-
-            const options = {
-                method: "PATCH",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    status: editStatus.value
-                })
-            }
-
-            const response = await fetch(
-                `http://localhost:3000/tasks/${data['id']}`,
-                options
-            );
-
-        })
-
-    });
-
-    task.appendChild(editBtn)
 
     ///Enrol button
     const enrollBtn = document.createElement("button")
@@ -151,17 +81,10 @@ function createPostElement(data) {
         }
         
     })
-
-
-
-
     task.appendChild(enrollBtn)
-
-
     return task;
     
 }
-console.log("line 114")
 document.getElementById("post-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const currentDate = new Date();
@@ -185,9 +108,6 @@ document.getElementById("post-form").addEventListener("submit", async (e) => {
             task_name: form.get("title"),
             num_volunteers_needed: form.get("volNum"),
             start_date:formattedDate
-            
-            
-            
         })
     }
 
@@ -197,13 +117,8 @@ document.getElementById("post-form").addEventListener("submit", async (e) => {
         window.location.reload();
     }
 })
-console.log("line 139")
-
 
 async function loadTasks() {
-
-    // client/assets/board.js
-    // loadPosts function
     const options = {
         headers: {
             'Authorization': localStorage.getItem("token")
@@ -223,24 +138,39 @@ async function loadTasks() {
     } else {
         window.location.assign("./index.html");
     }
-
 }
 
-function loginSignVisable(){
+function changeHref() {
+    const is_ad=localStorage.getItem("isAdmin")
+    const link = document.getElementById("link6");
+    if (is_ad === "true" ) {
+    link.href = "./admin.html";  
+    }
+    else if(is_ad === "false" ) {
+        link.href = './profile.html';
+    }
+    else {
+        link.style.display = 'none';
+    }
+}
+
+function loginSignVisable() {
     const token=localStorage.getItem("token")
     if (token) {
         const link4 = document.getElementById("link4");
         const link5 = document.getElementById("link5");
         link4.style.display = 'none';
         link5.style.display = 'none';
-
     }
     else {
         const btn = document.getElementById("log-out");
         btn.style.display = 'none';
+        const btn2 = document.getElementById("link6");
+        btn2.style.display = 'none';
     }
 }
-loginSignVisable()
 
+changeHref()
+loginSignVisable()
 loadTasks();
 configureInterface();

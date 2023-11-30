@@ -7,18 +7,20 @@
     <link rel="shortcut icon" href="./assets/volunteer-icon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=BioRhyme">
     <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/profile.css">
     <script defer src="./assets/js/profile.js"></script>
     <script defer src="./assets/js/logout.js"></script>
     <title>Log In</title>
 </head>
 <body style="font-family: BioRhyme;">
     <nav>
-        <img src="./assets/favicon-32x32.png" alt="favicon">
+        <img src="./assets/volunteer-icon.ico" alt="favicon">
         <a href="./index.html">Home</a>
         <a href="./services.html">Services</a>
         <a href="./register.html" id="link5">Sign up</a>
         <a href="./profile.html">Profile</a>
-        <button id="log-out"><a href="./index.html">Log out</a></button>
+        <a href="./index.html" class="navlink" id="log-out">Log out</a>
     </nav>
     <section id="profile">
         <header>
@@ -29,7 +31,7 @@
             <section id="accountDetails">
                 <div class="userName">
                     <label id = "usernameLabel"> Username: SELECT FROM DB </label>
-                    <button id="editUsername" style="font-family: BioRhyme;">Edit</button>
+                    <button id="editUsername" style="font-family: BioRhyme;" onclick="openForm()">Edit</button>
                 </div>
                 <div class="emailAddress">
                     <label id = "emailLabel"> Email address: SELECT FROM DB </label>
@@ -37,11 +39,43 @@
 
                 </div>
             </section>
+
+            <div class="form-popup" id="edit-form">
+                <form class="form-container">
+                    <h2>Edit username</h2>
+ 
+
+                    <fieldset>
+                        <label for="editStatus">Username:</label>
+                        <textarea id="editStatus" name="content" required></textarea>
+                    </fieldset>
+
+                    <input type="submit"  class="btn acceptBtn" value="Accept" id="accept">
+                    <button type="button" class="btn cancel" onclick="closeEditForm()">Cancel</button>
+                </form>
+            </div>
+
+
+            <div class="form-popup" id="edit-form_email">
+                <form class="form-container">
+                    <h2>Edit email</h2>
+ 
+
+                    <fieldset>
+                        <label for="editEmail_value">Email:</label>
+                        <textarea id="editEmail_value" name="content" required></textarea>
+                    </fieldset>
+
+                    <input type="submit"  class="btn acceptBtn" value="Accept" id="acceptEmail">
+                    <button type="button" class="btn cancel" onclick="closeEditFormEmail()">Cancel</button>
+                </form>
+            </div>
+
+
+
             <div class="services"> 
                 <h2>Your services</h2>
-
                 <div id="servicesDiv"></div>
-                
                 <!--<button id="deleteService">Delete</button>-->
                 <button id="homeBtn2" style="font-family: BioRhyme;"><a href="./index.html">Back to home page</a></button>
             </div>

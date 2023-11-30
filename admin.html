@@ -8,31 +8,35 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=BioRhyme">
     <link rel="shortcut icon" href="./assets/volunteer-icon.ico">
-
+    <script defer src="./assets/js/logout.js"></script>
     <script src="./assets/js/admin.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <title>Admin page</title>
 </head>
 
 <body>
     <nav>
-        <img src="./assets/favicon-32x32.png" alt="favicon">
-        <a href="./index.html">Home</a>
-        <a href="./services.html">Services</a>
-        <a href="./login.html">Log in</a>
-        <a href="./register.html">Sign up</a>
-        <a href="./profile.html">Profile</a>
+        <img src="./assets/volunteer-icon.ico" alt="favicon">
+        <a href="./index.html" id="link1">Home</a>
+        <a href="./services.html" id="link3">Services</a>
+        <a href="./login.html" id="link4">Log in</a>
+        <a href="./register.html" id="link5">Sign up</a>
+        <a href="./profile.html" class="navlink" id="link6">Profile</a>
+        <a href="./index.html" class="navlink" id="log-out">Log out</a>
     </nav>
 
     <header>
-        <h1>Admin page</h1>
+        <h1>Admin</h1>
     </header>
 
     <main>
-        <div class="buttons" align="center">
+        <div class="buttons">
             <button id="usersBtn">Check users</button>
             <button id="tasksBtn">Check tasks</button>
             <button class="tasksBtn" id="tasksBtn" onclick="openForm()">Add a new task</button>
+            <button id="newsBtn">Check news</button>
+            <button class="updateBtn" id="updateBtn" onclick="openNewsForm()">Add a new update</button>
         </div>
         <div class="newTaskPopup" id="newTaskPopup">
             <form class="popupContainer">
@@ -80,8 +84,57 @@
                 <button type="button" class="btn cancel" onclick="closeEditForm()">Cancel</button>
             </form>
         </div>
-        <div class="users" id="users" style="overflow-y:scroll;"></div>
-        <div class="tasks" id="tasks" style="overflow-y:scroll;"></div>
+        <div class="editNewsPopup" id="editNewsPopup">
+            <form class="popupContainer">
+                <h2>Edit a news entry</h2>
+                <fieldset id="nameField">
+                    <label for="editNewsTitle">Title:</label>
+                    <input type="text" id="editNewsTitle" name="editNewsTitle" required>
+                </fieldset>
+                <fieldset id="statusField">
+                    <label for="editImage">Image URL:</label>
+                    <input type="text" id="editImage" name="editImage" required>
+                </fieldset>
+                <fieldset id="volunteersField">
+                    <label for="editNewsContent">Content:</label>
+                    <input type="text" id="editNewsContent" name="editNewsContent" required>
+                </fieldset>
+                <fieldset id="startDateField">
+                    <label for="editNewsDate">Start Date:</label>
+                    <input type="date" id="editNewsDate" name="editNewsDate" required>
+                </fieldset>
+                <input type="submit"  class="btn acceptBtn" value="Accept" id="acceptNews">
+                <button type="button" class="btn cancel" onclick="closeEditNewsForm()">Cancel</button>
+            </form>
+        </div>
+        <div class="newUpdatePopup" id="newUpdatePopup">
+            <form class="popupContainer">
+                <h2>Add a news entry</h2>
+                <fieldset id="nameField">
+                    <label for="newsTitle">Title:</label>
+                    <input type="text" id="newsTitle" name="newsTitle" required>
+                </fieldset>
+                <fieldset id="statusField">
+                    <label for="image">Image URL:</label>
+                    <input type="text" id="image" name="image" required>
+                </fieldset>
+                <fieldset id="volunteersField">
+                    <label for="newsContent">Content:</label>
+                    <input type="text" id="newsContent" name="newsContent" required>
+                </fieldset>
+                <fieldset id="startDateField">
+                    <label for="newsDate">Start Date:</label>
+                    <input type="date" id="newsDate" name="newsDate" required>
+                </fieldset>
+                <input type="submit"  class="btn acceptBtn" value="Accept" id="postNews">
+                <button type="button" class="btn cancel" onclick="closeNewsForm()">Cancel</button>
+            </form>
+        </div>
+
+        <div class="users" id="users" ></div>
+        <div class="tasks" id="tasks" ></div>
+        <div class="news" id="news" ></div>
+
     </main>
     <footer>
         <div class="footer22">

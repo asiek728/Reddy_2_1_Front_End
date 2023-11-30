@@ -100,3 +100,7 @@ textarea {
 .form-container .btn:hover, .newPostBtn:hover {
   opacity: 1;
 }
+nav img {
+  width: 39px;
+  height: 39px;
+}
