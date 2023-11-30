@@ -39,7 +39,7 @@ text-decoration: none;
 .container {
   display: flex;
   /* flex-direction: column; */
-  height: 100vh;
+  height: 65vh;
   flex-wrap: wrap;
   align-content: flex-start;
   row-gap: 15px;
