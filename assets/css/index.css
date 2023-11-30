@@ -5,3 +5,13 @@
 .card-text {
     text-align: center;
 }
+
+#invite {
+
+    background-color: white;
+    width: 50%;
+    margin : auto;
+    border-radius: 10px;
+    font-size: 20px;
+    
+}
