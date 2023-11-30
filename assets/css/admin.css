@@ -37,7 +37,7 @@ nav img {
 }
 
 h1 {
-    margin-top: 1em;
+    margin-top: 3em;
     text-align: center;
     color:rgb(32, 118, 204); ;
 
@@ -64,7 +64,7 @@ h1 {
     font-size: large;
     cursor: pointer;
     border-style: none;
-    color:rgb(219, 205, 205);
+    color:white;
 }
 
 #usersBtn:hover, #newsBtn:hover, #updateBtn:hover,
@@ -160,9 +160,10 @@ textarea:focus {
 
 .tasks>div, .users>div, .news>div{
     border-style: solid;
-    border-color:rgb(37, 37, 240); ;
+    border-color:rgb(37, 37, 240); 
     border-radius: 15px;
     margin: 15px;
+    background-color: rgb(32, 118, 204);
 }
 
 small {
@@ -176,7 +177,7 @@ small {
 	padding-right: 3em;
 	gap: 3em;
     padding-left: 3em;
-    margin-top: 16em;
+    margin-top: 10em;
 	font-size: 14px;
 	color: rgb(49, 44, 44);
 	border-top: 0.5px solid rgb(176, 237, 245);
@@ -212,14 +213,20 @@ small a:hover {
     margin-left:2em;
     margin-right: 2em;
     border-style: solid;
-    border-color:blue; ;
-    border-radius: 8px;
+    border-color:rgb(7, 77, 146); ; 
+    border-radius: 14px;
     background-color: rgb(7, 77, 146); 
     cursor: pointer;
     padding: 10px;
-    font-size: 19px;
+    font-size: 18px;
+    color: white;
+    font-family: "BioRhyme";
 }
     
 .removeBtn:hover {
     background-color: rgb(20, 95, 170); ;
+}
+
+.newsDiv { 
+    padding: 30px;
 }
