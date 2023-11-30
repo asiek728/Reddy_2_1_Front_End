@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/admin.css">
     <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=BioRhyme">
     <link rel="shortcut icon" href="./assets/volunteer-icon.ico">
     <script defer src="./assets/js/logout.js"></script>
@@ -25,11 +25,9 @@
         <a href="./profile.html" class="navlink" id="link6">Profile</a>
         <a href="./index.html" class="navlink" id="log-out">Log out</a>
     </nav>
-
     <header>
         <h1>Admin</h1>
     </header>
-
     <main>
         <div class="buttons">
             <button id="usersBtn">Check users</button>
@@ -80,8 +78,10 @@
                     <label for="editStartDate">Start Date:</label>
                     <input type="date" id="editStartDate" name="editStartDate" required>
                 </fieldset>
-                <input type="submit"  class="btn acceptBtn" value="Accept" id="accept">
-                <button type="button" class="btn cancel" onclick="closeEditForm()">Cancel</button>
+                <div class="buttons1">
+                    <input type="submit"  class="btn acceptBtn" value="Accept" id="accept">
+                    <button type="button" class="btn cancel" onclick="closeEditForm()">Cancel</button>
+                </div>
             </form>
         </div>
         <div class="editNewsPopup" id="editNewsPopup">
@@ -103,8 +103,8 @@
                     <label for="editNewsDate">Start Date:</label>
                     <input type="date" id="editNewsDate" name="editNewsDate" required>
                 </fieldset>
-                <input type="submit"  class="btn acceptBtn" value="Accept" id="acceptNews">
-                <button type="button" class="btn cancel" onclick="closeEditNewsForm()">Cancel</button>
+                    <input type="submit"  class="btn acceptBtn" value="Accept" id="acceptNews">
+                    <button type="button" class="btn cancel" onclick="closeEditNewsForm()">Cancel</button>
             </form>
         </div>
         <div class="newUpdatePopup" id="newUpdatePopup">
@@ -130,11 +130,9 @@
                 <button type="button" class="btn cancel" onclick="closeNewsForm()">Cancel</button>
             </form>
         </div>
-
         <div class="users" id="users" ></div>
         <div class="tasks" id="tasks" ></div>
         <div class="news" id="news" ></div>
-
     </main>
     <footer>
         <div class="footer22">
