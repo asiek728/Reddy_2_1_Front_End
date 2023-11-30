@@ -32,6 +32,7 @@ function createPostElement(data) {
     dateElement.textContent = "Start date: "+ formattedDate;
     task.appendChild(dateElement);
 
+
     const header = document.createElement("h1");
     header.textContent = data["task_name"];
     task.appendChild(header);
