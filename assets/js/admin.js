@@ -99,7 +99,7 @@ function createUsersElement(data) {
     volunteering.textContent = "User volunteers in:";
 
     const tasks = document.createElement("div");
-    tasks.id = "userTasksDiv"
+    tasks.id = data["id"]+"userTasksDiv"
 
     loadUserServices(data["id"]);
 
@@ -159,7 +159,7 @@ async function loadUserServices(userID) {
 
     if (response.status == 200) {
         const tasks = await response.json();
-        const container = document.getElementById("userTasksDiv");
+        const container = document.getElementById(userID+"userTasksDiv");
 
         tasks.forEach(p => {
             const elem = createUserTasksElement(p);
@@ -169,6 +169,7 @@ async function loadUserServices(userID) {
 }
 
 async function loadUsers() {
+    closeUsers();
     const options = {
         headers: {
             'Authorization': localStorage.getItem("token")
@@ -291,6 +292,7 @@ function createTasksElement(data) {
 }
 
 async function loadTasks() {
+    closeTasks();
     const options = {
         headers: {
             'Authorization': localStorage.getItem("token")
@@ -401,6 +403,7 @@ function createNewsElement(data) {
 }
 
 async function loadNews() {
+    closeNews();
     const response = await fetch("http://localhost:3000/posts");
 
     if (response.status == 200) {

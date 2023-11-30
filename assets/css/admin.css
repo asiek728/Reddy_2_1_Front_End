@@ -137,7 +137,7 @@ textarea:focus {
     padding: 20px;
 }
 
-.users,
+.users, .news,
 .tasks {
     margin: 20px;
     display: flex;
@@ -145,13 +145,13 @@ textarea:focus {
     flex-direction: row;
 }
 
-.tasks>div, .users>div{
+.tasks>div, .users>div, .news>div{
     border-style: solid;
     border-radius: 15px;
     margin: 15px;
 }
 
-.tasks>:first-child, .users>:first-child {
+.tasks>:first-child, .news>:first-child, .users>:first-child {
     flex: 0 1 90%;
 }
 
