@@ -169,7 +169,10 @@ async function loadUserServices(userID) {
 }
 
 async function loadUsers() {
+    closeTasks();
+    closeNews();
     closeUsers();
+
     const options = {
         headers: {
             'Authorization': localStorage.getItem("token")
@@ -180,12 +183,6 @@ async function loadUsers() {
     if (response.status == 200) {
         const users = await response.json();
         const container = document.getElementById("users");
-
-        const closeBtn = document.createElement("button");
-        closeBtn.textContent = "close";
-        closeBtn.className = "userDiv"
-        closeBtn.addEventListener('click', closeUsers)
-        container.appendChild(closeBtn);
 
         users.forEach(p => {
             const elem = createUsersElement(p);
@@ -293,6 +290,9 @@ function createTasksElement(data) {
 
 async function loadTasks() {
     closeTasks();
+    closeNews();
+    closeUsers();
+
     const options = {
         headers: {
             'Authorization': localStorage.getItem("token")
@@ -303,12 +303,6 @@ async function loadTasks() {
     if (response.status == 200) {
         const tasks = await response.json();
         const container = document.getElementById("tasks");
-
-        const closeBtn = document.createElement("button");
-        closeBtn.textContent = "close";
-        closeBtn.className = "taskDiv"
-        closeBtn.addEventListener('click', closeTasks)
-        container.appendChild(closeBtn);
 
         tasks.forEach(p => {
             const elem = createTasksElement(p);
@@ -403,18 +397,15 @@ function createNewsElement(data) {
 }
 
 async function loadNews() {
+    closeTasks();
     closeNews();
+    closeUsers();
+    
     const response = await fetch("http://localhost:3000/posts");
 
     if (response.status == 200) {
         const news = await response.json();
         const newsDiv = document.getElementById('news')
-
-        const closeBtn = document.createElement("button");
-        closeBtn.textContent = "close";
-        closeBtn.className = "newsDiv"
-        closeBtn.addEventListener('click', closeNews)
-        newsDiv.appendChild(closeBtn);
 
         news.forEach(p => {
             console.log(p)
