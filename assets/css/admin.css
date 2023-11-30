@@ -164,7 +164,7 @@ textarea:focus {
     border-radius: 15px;
     margin: 15px;
 }
- /*background-color: rgb(32, 118, 204); ;*/
+
 small {
 	display: flex;
 	flex-wrap: wrap;
