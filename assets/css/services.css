@@ -47,7 +47,7 @@ text-decoration: none;
 }
 
 /*.removeBtn,*/ .enrollBtn {
-  background-color: rgb(150, 205, 241);
+  background-color:rgb(91, 149, 214);
   width: 25vh;
   height: 5vh;
   border-radius: 20px;
@@ -57,7 +57,7 @@ text-decoration: none;
 }
 
 /*.removeBtn:hover*/ .enrollBtn:hover {
-  background-color: rgb(96, 170, 219);
+  background-color:rgb(117, 163, 216);
 }
 
 .newPostBtn {
@@ -78,7 +78,8 @@ margin-bottom: 1vw;
 display: flex;
 flex-direction: column;
 align-items: center;
-background-color: rgb(32, 118, 204);;
+background-color: rgb(198, 223, 240);
+/*background-color: rgb(32, 118, 204);;*/
 }
 
 textarea {
