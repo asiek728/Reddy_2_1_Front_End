@@ -20,11 +20,14 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const data = await response.json();
     
     if (response.status == 200) {
-        localStorage.clear()
         localStorage.setItem("token", data.token)
         localStorage.setItem("isAdmin", data.isAdmin)
         localStorage.setItem("userID", data.user_id)
         window.location.assign("index.html")
+        // const wrongUser = document.querySelector('#username')
+        // const wrongPassword = document.querySelector('#password')
+        // console.log(wrongPassword)
+        // console.log(wrongUser)
     } else {
         alert(data.error);
     }

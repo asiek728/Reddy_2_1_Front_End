@@ -3,14 +3,14 @@ const { renderDOM } = require('./helpers')
 let dom;
 let document;
 
-describe('index.html', () => {
+describe('services.html', () => {
   beforeEach(async () => {
-    dom = await renderDOM('./index.html')
+    dom = await renderDOM('./services.html')
     document = await dom.window.document
   })
 
-  it('has links on navbar', () => {
-    const link = document.querySelectorAll('.navlink')
+  it('has a logout button', () => {
+    const link = document.querySelectorAll('#logout')
     expect(link).toBeTruthy()
   })
 
@@ -18,6 +18,12 @@ describe('index.html', () => {
     const link = document.querySelector('#link1')
     link.click()
     expect(dom.window.location.href).toEqual('file:///C:/Users/Jeyag/LFA/lap2/project/Reddy_2_1_Front_End/index.html')
+  })
+
+  it('News link takes you to news page', () => {
+    const link = document.querySelector('#link2')
+    link.click()
+    expect(dom.window.location.href).toEqual('file:///C:/Users/Jeyag/LFA/lap2/project/Reddy_2_1_Front_End/news.html')
   })
 
   it('Services link takes you to services page', () => {
@@ -39,7 +45,7 @@ describe('index.html', () => {
   })
 
   it('Admin link takes you to admin page', () => {
-    const link = document.querySelector('#link6')
+    const link = document.querySelector('#link5')
     link.click()
     expect(dom.window.location.href).toEqual('file:///C:/Users/Jeyag/LFA/lap2/project/Reddy_2_1_Front_End/admin.html')
   })
