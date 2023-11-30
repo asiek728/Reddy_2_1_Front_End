@@ -22,22 +22,36 @@
     outline: none;
   }
   
-  .form-container .btn {
-    background-color: rgb(49, 44, 44);
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 90%;
-    margin-left:5%;
-    margin-top:20px;
-    opacity: 0.8;
-  }
+.form-container .btn {
+  background-color: rgb(49, 44, 44);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+  margin-left:5%;
+  margin-top:20px;
+  opacity: 0.8;
+}
   
-  .form-container .cancel {
-    background-color: rgb(49, 44, 44);
-  }
+.form-container .cancel {
+  background-color: rgb(49, 44, 44);
+}
   
-  .form-container .btn:hover, .newPostBtn:hover {
-    opacity: 1;
-  }
+.form-container .btn:hover, .newPostBtn:hover {
+  opacity: 1;
+}
+
+.taskDiv button {
+  background-color:rgb(91, 149, 214);
+  border-radius: 2rem;
+  padding: 5px 13px 5px 13px;
+  border-style: none;
+  font-size: 17px;
+  cursor: pointer;
+  font-family: "BioRhyme";
+}
+
+.taskDiv button:hover {
+  background-color: rgb(117, 163, 216);
+}
