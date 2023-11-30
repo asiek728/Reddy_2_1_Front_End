@@ -32,10 +32,6 @@ function createPostElement(data) {
     dateElement.textContent = "Start date: "+ formattedDate;
     task.appendChild(dateElement);
 
-    const endDateElement = document.createElement("p");
-    endDateElement.textContent = "End date: "+ formattedDate;
-    task.appendChild(endDateElement);
-
     const header = document.createElement("h1");
     header.textContent = data["task_name"];
     task.appendChild(header);
