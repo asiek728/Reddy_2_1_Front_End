@@ -151,10 +151,6 @@ textarea:focus {
     margin: 15px;
 }
 
-.tasks>:first-child, .news>:first-child, .users>:first-child {
-    flex: 0 1 90%;
-}
-
 small {
 	display: flex;
 	flex-wrap: wrap;
