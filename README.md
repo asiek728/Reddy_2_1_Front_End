@@ -79,16 +79,12 @@ NOTE: you need both client and server to be running to use the application
 
 - hide log in and sign up nav bar links when volunteer is logged in
 - update number of volunteer needed once a volunteer has enrolled
-- making profile nav link interactive by redirecting admin and volunteer to their respective pages
+- making profile nav link interactive by redirecting admin and volunteer to their respective page
 
-## Future features
+# Future features
 
 - Introduce a gamification elements like bages and leadership boards for motivation.
 - Allow volunteers to synchronize events with their calendar. 
 - Allow volunteers to propose new tasks for approval.
 - Verification process for official volunteers.
 - Notifications for new tasks and news.
-
-
-
-
