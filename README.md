@@ -42,6 +42,24 @@ NOTE: you need both client and server to be running to use the application
 
 # Screenshots/Images
 
+## Home Page
+<img src="https://i.ibb.co/qBGzHs7/homepage.png" alt="homepage" border="0">
+
+## Signup Page
+<img src="https://i.ibb.co/JyhnjdV/signup.png" alt="signup" border="0">
+
+## Login Page
+<img src="https://i.ibb.co/BtGQDXH/login.png" alt="login" border="0">
+
+## Profile page
+<img src="https://i.ibb.co/HdS076g/profile.png" alt="profile" border="0">
+
+## Services page
+<img src="https://i.ibb.co/B4YfH0s/services.png" alt="services" border="0">
+
+## Admin Page
+<img src="https://i.ibb.co/d5K4qMm/admin-page.png" alt="admin-page" border="0">
+
 # Wins & Challenges
 ## Wins
 
