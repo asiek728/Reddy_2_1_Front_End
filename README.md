@@ -31,39 +31,55 @@ NOTE: you need both client and server to be running to use the application
 - To start client side
    - Type `npm run dev`, app runs on localhost:8080
 
-# Technologies
+## Technologies
 - HTML
 - Javascript
 - CSS
 - Express API
 - NodeJS
 
-# Process
+## Process
 
-# Screenshots/Images
+1. Planning
+2. Analysis
+3. Design
+4. Implementation
+5. Testing & Integration
+6. Improvement of UX
 
-## Home Page
+## Screenshots/Images
+
+### Home Page
 <img src="https://i.ibb.co/qBGzHs7/homepage.png" alt="homepage" border="0">
 
-## Signup Page
+### Signup Page
 <img src="https://i.ibb.co/JyhnjdV/signup.png" alt="signup" border="0">
 
-## Login Page
+### Login Page
 <img src="https://i.ibb.co/BtGQDXH/login.png" alt="login" border="0">
 
-## Profile page
+### Profile page
 <img src="https://i.ibb.co/HdS076g/profile.png" alt="profile" border="0">
 
-## Services page
+### Services page
 <img src="https://i.ibb.co/B4YfH0s/services.png" alt="services" border="0">
 
-## Admin Page
+### Admin Page
 <img src="https://i.ibb.co/d5K4qMm/admin-page.png" alt="admin-page" border="0">
 
-# Wins & Challenges
-## Wins
+## Wins & Challenges
 
-## Chalenges
+### Wins
+
+- Implementation of user authentication and authorisation for both volunteer and admin
+- Token storage in each different page
+- Displaying and storing data on database
+
+### Challenges
+
+- hide log in and sign up nav bar links when volunteer is logged in
+- update number of volunteer needed once a volunteer has enrolled
+- making profile nav link interactive by redirecting admin and volunteer to their respective page
 
 # Future features
 
