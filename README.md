@@ -1,4 +1,4 @@
-# Reddy_2_1_Front_End
+# Give a hand Front End
 
 This is the front end of our application containing the functionality that the users can see
 and interact with. To interact with our application please follow the instructions below!
@@ -25,11 +25,32 @@ NOTE: you need both client and server to be running to use the application
 - Open repository 
    - Type `cd Reddy_2_1_Front_End.git`
 
-- Open repository on Visual Studio Code
-   - Type `code .`
-
 - Install required dependencies, including live server 
    - Type `npm install`
 
 - To start client side
    - Type `npm run dev`, app runs on localhost:8080
+
+# Technologies
+- HTML
+- Javascript
+- CSS
+- Express API
+- NodeJS
+
+# Process
+
+# Screenshots/Images
+
+# Wins & Challenges
+## Wins
+
+## Chalenges
+
+# Future features
+
+- Introduce a gamification elements like bages and leadership boards for motivation.
+- Allow volunteers to synchronize events with their calendar. 
+- Allow volunteers to propose new tasks for approval.
+- Verification process for official volunteers.
+- Notifications for new tasks and news.
